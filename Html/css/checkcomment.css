@@ -1,0 +1,152 @@
+.box{
+    margin-bottom: 0.3rem;
+    border-top: 1px solid #e8e8e8;
+}
+.che-com .pro-style {
+    background: #fff;
+    padding:0.3rem;
+    border-bottom: 0.01rem solid #dddddd;
+    border-top: 0.01rem solid #dddddd;
+}
+
+.che-com .content {
+    padding: 0.35rem 0.15rem;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    margin-top: 0.24rem;
+}
+
+.che-com .name {
+    font-size: 0.3rem;
+    color: #333;
+    line-height: 0.34rem;
+    margin-right: 0.18rem;
+}
+
+.che-com ul {
+    float: left;
+}
+
+.che-com li {
+    width: 0.36rem;
+    height: 0.34rem;
+    float: left;
+    margin-right: 0.06rem;
+    background: url("img/img48.png") no-repeat;
+    background-size: cover;
+}
+
+.che-com li.cur {
+    background: url("img/img47.png") no-repeat;
+    background-size: cover;
+}
+
+.che-com .time {
+    font-size: 0.26rem;
+    color: #999999;
+    line-height: 0.34rem;
+}
+
+.che-com .words {
+    font-size: 0.26rem;
+    line-height: 0.44rem;
+    color: #666666;
+    margin-top: 0.2rem;
+}
+
+.che-com .reply {
+    font-size: 0.26rem;
+    line-height: 0.3rem;
+    color: #666666;
+    padding: 0.23rem 0.28rem;
+    background: #f0f0f0;
+    margin-top: 0.21rem;
+    position: relative;
+}
+
+.che-com .reply .time {
+    font-size: 0.24rem;
+    line-height: 0.29rem;
+    margin-top: 0.19rem;
+    color: #999;
+}
+
+.che-com .reply i {
+    position: absolute;
+    width: 0.14rem;
+    height: 0.07rem;
+    background: url("img/img49.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: -0.07rem;
+    left: 0.35rem;
+}
+
+.pro-style .img {
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 0.01rem solid #e8e8e8;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 0.26rem;
+}
+
+.pro-style .info {
+    width: 3rem;
+}
+
+.pro-style .name {
+    font-size: 0.3rem;
+    line-height: 0.36rem;
+    color: #3d3d45;
+    height: 0.72rem;
+    overflow: hidden;
+}
+
+.pro-style .color {
+    font-size: 0.26rem;
+    line-height: 0.24rem;
+    color: #999999;
+    margin-top: 0.25rem;
+    width: 3rem;
+}
+
+.pro-style .color span {
+    margin-right: 0.08rem;
+}
+
+.pro-style .num {
+    width: 1.45rem;
+    text-align: right;
+    font-size: 0.24rem;
+    line-height: 0.24rem;
+}
+
+.pro-style .num .price {
+    color: #c0a85f;
+    margin-top: 0.1rem;
+    font-size: 0.3rem;
+}
+
+.pro-style .num .number {
+    margin-top: 0.6rem;
+    color: #333333;
+    font-size: 0.3rem;
+}
+
+.submit{
+    display: block;
+    width: 100%;
+    height:1.16rem;
+    background: #dccc8d;
+    font-size: 0.36rem;
+    color: #fff;
+    margin: 0.77rem auto 0;
+    border: 0;
+    border-radius: 0.07rem;
+    text-align: center;
+    line-height: 1.16rem;
+    border-radius: 6px;
+}

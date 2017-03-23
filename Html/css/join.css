@@ -1,0 +1,105 @@
+.pad-20{
+    padding:0 0.2rem;
+}
+.box{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+.scroll{
+    width:100%;
+    height:100%;
+    overflow: auto;
+}
+.main{
+}
+.join{
+    position: absolute;
+    bottom:0;
+    font-size: 0.28rem;
+    color: #fff;
+    background-color: #122b60;
+    line-height: 0.84rem;
+    text-align: center;
+    width:100%;
+    display: block;
+}
+.jn-tit{
+    line-height: 0.7rem;
+    font-size: 0.24rem;
+    color: #999999;
+}
+.jn-xx{
+    background-color: #fff;
+}
+.jn-xx-main{
+    line-height: 0.8rem;
+    height:0.8rem;
+    border-bottom: 0.01rem solid #f5f5f5;
+}
+.jn-xx-main span{
+    font-size: 0.24rem;
+    color: #333;
+    width:1.2rem;
+}
+.jn-hy-che{
+    outline:none;
+    background-color:#eeeeee;
+    width:0.24rem;
+    height:0.24rem;
+    border:0.01rem solid #666666;
+    display: table-cell;
+    height:100%;
+    margin-right: 0.08rem;
+}
+.jn-xx-main .vip-num{
+    font-size: 0.24rem;
+    color: #777777;
+}
+.jn-xx-main .txbox{
+    height:100%;
+    width:4rem;
+}
+.join-layer{
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:rgba(0,0,0,0.4);
+}
+.join-logo{
+    background: url("img/join-logo.png") no-repeat center;
+    background-size: 1.93rem 0.49rem;
+    width:100%;
+    height: 1.06rem;
+}
+.join-main{
+    width:4.6rem;
+    height:3.1rem;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left: -2.3rem;
+    margin-top: -1.55rem;
+    background-color: #fff;
+    z-index: 10;
+    border-radius: 6px;
+}
+.join-main p{
+    margin:0 0.42rem;
+    font-size: 0.24rem;
+    color: #333333;
+    line-height: 0.3rem;
+    margin-bottom: 0.42rem;
+}
+.join-ok{
+    font-size: 0.3rem;
+    color: #333;
+    text-align: center;
+    line-height: 0.7rem;
+    border-top:0.01rem solid #eaeaea;
+}

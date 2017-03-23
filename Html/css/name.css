@@ -1,0 +1,30 @@
+.myinfo .line {
+    border-bottom: 0.01rem solid #e8e8e8;
+    background: #fff;
+    padding: 0 0.2rem;
+}
+.myinfo .text {
+    width: 100%;
+    height: 0.98rem;
+    font-size: 0.3rem;
+    color: #64666a;
+    border: 0;
+    background: none;
+    display: block;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+.submit {
+    width: 7rem;
+    height: 0.86rem;
+    border-radius: 8px;
+    background-color: #dccc8d;
+    position: fixed;
+    bottom: 0.36rem;
+    font-size: 0.3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.86rem;
+    left: 0.24rem;
+}

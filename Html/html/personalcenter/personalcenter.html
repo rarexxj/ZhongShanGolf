@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="zh-CN"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content="杭州博采网络科技股份有限公司-高端网站建设-http://www.bocweb.cn"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>成都猫眼食品有限责任公司</title>
+    <link rel="stylesheet" href="/Html/public/css/reset.css">
+    <link rel="stylesheet" href="/Html/public/css/main.css">
+    <link rel="stylesheet" href="/Html/css/PersonalCenter.css">
+    <script type="text/javascript" src="/Html/public/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="/Html/public/js/main.js"></script>
+    <script type="text/javascript" src="/Html/public/js/vue.js"></script>
+
+</head>
+<body style="background-color: #f3fbfd">
+<div class="per-cen pb140" id="percen">
+    <div class="head">
+        <a href="/Html/html/personalcenter/myinfo.html">
+            <div class="img fl"><img v-if="info.Avatar" :src="info.Avatar.RelativePath" width="100%" height="100%" alt=""><img v-else="" src="/Html/css/img/img08.png" width="100%" height="100%" alt=""></div>
+            <div class="info fl">
+                <div class="name">{{info.NickName}}</div>
+                <div class="ph">{{info.PhoneNumber}}</div>
+            </div>
+            <span class="jt2"></span>
+        </a>
+    </div>
+    <div class="money f-cb">
+        <div class="left fl">
+            <a href="/Html/html/personalcenter/mycoupon.html">
+                <div class="num">{{state.Coupon}}<i>张</i></div>
+                <div class="p">我的优惠券</div>
+            </a>
+        </div>
+        <div class="right fl">
+            <a href="/Html/html/personalcenter/integral.html">
+                <div class="num">{{state.Integral}}<i>分</i></div>
+                <div class="p">我的积分</div>
+            </a>
+        </div>
+    </div>
+    <div class="myorder">
+        <div class="line">
+            <a href="/Html/html/personalcenter/myorder.html?orderType=0">
+                <div class="tt">我的订单</div>
+                <div class="tc">所有订单</div>
+                <span class="jt"></span>
+            </a>
+        </div>
+        <div class="list f-cb">
+            <a href="/Html/html/personalcenter/myorder.html?orderType=1" class="pay">
+                <div class="tt">待付款</div>
+                <i v-if="state.PendingPayment != 0">{{state.PendingPayment}}</i>
+            </a>
+            <a href="/Html/html/personalcenter/myorder.html?orderType=2" class="get">
+                <div class="tt">待收货</div>
+                <i v-if="state.WaitingForReceiving != 0">{{state.WaitingForReceiving}}</i>
+            </a>
+            <a href="/Html/html/personalcenter/myorder.html?orderType=3" class="evaluate">
+                <div class="tt">待评价</div>
+                <i v-if="state.WaitingForEvaluate != 0">{{state.WaitingForEvaluate}}</i>
+            </a>
+            <a href="/Html/html/personalcenter/myorder.html?orderType=4" class="service">
+                <div class="tt">售后</div>
+                <i v-if="state.HasRefund != 0">{{state.HasRefund}}</i>
+            </a>
+        </div>
+    </div>
+
+    <div class="line mt20">
+        <a href="/Html/html/personalcenter/collection.html">
+            <div class="tt">我的收藏</div>
+            <span class="jt"></span>
+        </a>
+    </div>
+    <div class="line lishi">
+        <a href="/Html/html/personalcenter/history.html">
+            <div class="tt">浏览历史</div>
+            <span class="jt"></span>
+        </a>
+    </div>
+    <div class="weixin f-cb">
+        <div class="logo fl" style="background-image: url('/Html/css/img/logo52.png')"></div>
+        <!--<div class="info fl">-->
+            <!--<h2>敦奴服饰</h2>-->
+            <!--<div class="tc">简约、高雅、时尚</div>-->
+        <!--</div>-->
+        <div class="att fr">点击关注服务号</div>
+
+    </div>
+</div>
+<div class="index-navbox clearfix">
+    <a href="/index.html">
+        <i class="navlogo navlogo1"></i>
+        <span class="index-navwz">首页</span>
+    </a>
+    <a href="/Html/html/buy/productskind.html">
+        <i class="navlogo navlogo2"></i>
+        <span class="index-navwz">分类</span>
+    </a>
+    <a href="/Html/html/shopcar/shopcar.html">
+        <i class="navlogo navlogo3"></i>
+        <span class="index-navwz">购物车</span>
+    </a>
+    <a href="/Html/html/personalcenter/personalcenter.html"  class="active">
+        <i class="navlogo navlogo4"></i>
+        <span class="index-navwz">我的</span>
+    </a>
+</div>
+<div class="mask">
+    <div class="box">
+        <div class="ewm" style="background-image: url('/Html/css/img/img27.jpg')"></div>
+        <div class="p">
+            长按图片 <br> 扫描二维码关注公众号
+        </div>
+    </div>
+</div>
+<div class="new-loading">
+    <ul class="small-loading">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="/Html/mjs/personalcenter.js"></script>
+</body>
+</html>
