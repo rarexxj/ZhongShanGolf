@@ -148,7 +148,7 @@ $(function () {
         })
     }
 
-    $.nouser();
+    // $.nouser();
 
 
     //保留两位小数
@@ -161,7 +161,7 @@ $(function () {
 
 var html = '<script src="/Html/public/js/core-min.js"></script><script src="/Html/public/js/enc-base64-min.js"></script><script src="/Html/public/js/jquery.cookie.js"></script>'
 
-// document.write(html)
+document.write(html)
 
 window.base64decodes = function (str) {
     var words = CryptoJS.enc.Base64.parse(str);

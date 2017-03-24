@@ -1,0 +1,127 @@
+.integral .head {
+    display: block;
+    background: #fefdfe;
+    padding: 0.3rem 0.2rem;
+    position: relative;
+}
+
+.integral .head .img {
+    width: 0.7rem;
+    height: 0.7rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 0.04rem solid #fff;
+}
+
+.integral .head .info {
+    padding-left: 0.31rem;
+    color: #fff;
+    line-height: 0.54rem;
+    padding-top: 0.13rem;
+}
+
+.integral .head .name {
+    font-size: 0.3rem;
+    color:#122b60;
+    font-weight: bold;
+    line-height: 0.7rem;
+    margin-left: 0.1rem;
+}
+
+.integral .head .ph {
+    font-size: 0.28rem;
+}
+.integral .head .jf{
+    font-size: 0.48rem;
+    color: #122b60;
+    line-height: 0.7rem;
+}
+.integral .head .jf span{
+    font-size: 0.3rem;
+    color: #122b60;
+}
+.integral .list {
+    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+    width: 6.41rem;
+    background-color: #fefdfe;
+}
+.integral .list a {
+    display: block;
+    width: 33.333%;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    border-right: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    color: #333;
+}
+.integral .list a .tt.t1{
+    background:url("img/logo59.png") no-repeat left;
+    background-size: 0.24rem 0.24rem;
+    padding-left: 0.3rem;
+    font-size: 0.24rem;
+    color: #333;
+}
+.integral .list a .tt.t2{
+    background:url("img/logo60.png") no-repeat left;
+    background-size: 0.24rem 0.24rem;
+    padding-left: 0.3rem;
+    font-size: 0.24rem;
+    color: #333;
+}
+.integral .list a .tt.t3{
+    background:url("img/logo61.png") no-repeat left;
+    background-size: 0.24rem 0.24rem;
+    padding-left: 0.3rem;
+    font-size: 0.24rem;
+    color: #333;
+}
+.mainbox{
+    width:100%;
+    margin-top: 0.15rem;
+}
+.main{
+    padding:0.27rem;
+    background-color: #fff;
+    border-top: 0.01rem solid #eeeeee;
+    border-bottom: 0.01rem solid #eeeeee;
+    position: relative;
+}
+.main .pro-img{
+    width:1.8rem;
+    height:1.8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 0.54rem;
+}
+.pro-int-name{
+    font-size: 0.28rem;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 0.1rem;
+}
+.pro-int-int{
+    font-size: 0.2rem;
+    color: #999999;
+    width:3.2rem;
+    line-height: 0.26rem;
+}
+.pro-int-logo{
+    color: #f12c2c;
+    font-size: 0.32rem;
+    font-family:Arial;
+}
+.pro-int-price{
+    font-size: 0.24rem;
+    color: #666666;
+    display: inline-block;
+}
+.pro-int-buynum{
+    font-size: 0.2rem;
+    color: #aaa;
+    position: absolute;
+    bottom:0.32rem;
+    right:0.2rem;
+}

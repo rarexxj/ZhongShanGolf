@@ -1,7 +1,5 @@
 .address .addlist {
     background: #fff;
-    padding-top: 0.24rem;
-    padding-bottom: 0.12rem;
     margin-bottom: 16px;
     border-bottom: 0.01rem solid #e8e8e8;
     border-top: 0.01rem solid #e8e8e8;
@@ -18,7 +16,7 @@
     margin-top:-0.245rem;
 }
 .moren{
-    font-size: 0.28rem;
+    font-size: 0.24rem;
     background: #aaaaaa;
     display: inline-block;
     color: #fff;
@@ -27,7 +25,7 @@
     border-radius: 4px;
     position: absolute;
     right:0.25rem;
-    top:0.3rem;
+    top:0.2rem;
 }
 .address .addlist a {
     display: block;
@@ -41,35 +39,35 @@
 
 .address .name {
     min-width: 1.4rem;
-    font-size: 0.36rem;
+    font-size: 0.26rem;
     color: #333;
     line-height: 0.7rem;
 }
 
 .address .ph {
-    font-size: 0.34rem;
+    font-size: 0.26rem;
     line-height: 0.7rem;
     color: #333;
 }
 
 .address .add {
-    font-size: 0.28rem;
+    font-size: 0.26rem;
     line-height: 0.34rem;
     color: #8a8a8a;
 }
 
 .address .submit {
-    width: 6.8rem;
+    width: 6.1rem;
     display: block;
-    height:1.2rem;
-    background: #dccc8d;
+    height:0.88rem;
+    background: #122b60;
     font-size: 0.36rem;
     color: #fff;
     margin: 0.77rem auto 0;
     border: 0;
     border-radius: 8px;
     text-align: center;
-    line-height: 1.2rem;
+    line-height: 0.88rem;
 }
 
 .address .addlist.first {

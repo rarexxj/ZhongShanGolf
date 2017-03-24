@@ -7,14 +7,14 @@
     padding: 0.3rem;
 }
 .collection .img {
-    width: 1.94rem;
-    height: 1.94rem;
+    width: 1.6rem;
+    height: 1.6rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .collection .info {
-    width: 4.5rem;
+    width: 3.69rem;
     height: 1.94rem;
     position: relative;
 }
@@ -76,8 +76,8 @@
     text-align: center;
     font-size: 0.36rem;
     line-height: 0.86rem;
-    color: #dbcb8c;
-    border: 1px solid #dbcb8c;
+    color: #122b60;
+    border: 1px solid #122b60;
     margin: 0.47rem auto;
     border-radius: 0.08rem;
 }

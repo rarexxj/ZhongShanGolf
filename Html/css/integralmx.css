@@ -1,3 +1,38 @@
+.wallet .intinfo {
+    padding: 0.66rem 0.27rem 0.4rem 0.27rem;
+    background: #d4c280;
+    color: #fff;
+}
+.wallet .intinfo .tt {
+    font-size: 0.3rem;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+}
+.wallet .intinfo .num {
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    margin-top: 0.27rem;
+    margin-bottom: 0.27rem;
+}
+.wallet .intinfo .num span {
+    font-family: 'Arial';
+    font-size: 1.8rem;
+    line-height: 1;
+    display: block;
+    text-align: center;
+}
+.wallet .intinfo .intro {
+    font-size: 0.28rem;
+    line-height: 0.29rem;
+    color: #fff;
+    padding-left: 0.43rem;
+    background: url(img/img28.png) no-repeat;
+    background-size: 0.29rem 0.29rem;
+    position: absolute;
+    top: 0.38rem;
+    right: 0.15rem;
+}
 .wallet .title {
     line-height: 0.85rem;
     font-size: 0.24rem;

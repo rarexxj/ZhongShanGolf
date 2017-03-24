@@ -15,14 +15,14 @@
     float: left;
     width:25%;
     text-align: center;
-    height: 0.99rem;
+    height: 0.9rem;
     font-size: 0.3rem;
     color: #666666;
-    line-height: 0.99rem;
+    line-height: 0.9rem;
 }
 
 .ordernav a.active {
-    color: #dccc8d;
+    color: #122b60;
 }
 
 .ordernavbox {
@@ -60,7 +60,7 @@
 .my-order .st {
     color: #1c1f23;
     font-size: 0.28rem;
-    color: #dccc8d;
+    color: #122b60;
 }
 
 .my-order .total {
@@ -99,8 +99,8 @@
 
 .my-order .btns .btn.cur {
     color: #fff;
-    background-color: #dccc8d;
-    border-color: #dccc8d;
+    background-color: #122b60;
+    border-color: #122b60;
 }
 
 .pro-style {
@@ -182,10 +182,10 @@
     margin-left: 0.3rem;
 }
 .zongjia i{
-    color: #c0a85f;
+    color: #122b60;
 }
 .pro-style .price {
-    color: #c0a85f;
+    color: #122b60;
     font-size: 0.32rem;
 }
 .zhongl{
@@ -214,7 +214,7 @@
 
 .zt {
     font-size: 0.28rem;
-    color: #dccc8d;
+    color: #122b60;
     position: absolute;
     right:0.24rem;
     top:0.34rem;
@@ -234,14 +234,14 @@
 .back{
     width: 1.76rem;
     height: 0.6rem;
-    border: 0.02rem solid ##dccc8d;
+    border: 0.02rem solid #122b60;
     font-size: 0.26rem;
     line-height: 0.6rem;
     color: #fff;
     margin-left: 0.18rem;
     float: right;
     text-align: center;
-    background:#dccc8d;
+    background:#122b60;
 }
 .pop {
     position: fixed;
@@ -289,7 +289,7 @@
     text-align: center;
 }
 .pop .btnb p.quxiao{
-    background-color: #dccc8d;
+    background-color: #122b60;
     display: block;
     width: 50%;
     font-size: 0.3rem;

@@ -1,5 +1,5 @@
 $(function () {
-    $.ADDLOAD();
+    // $.ADDLOAD();
     $.checkuser();
     var id = $.getUrlParam('id');
     var sex;
@@ -27,13 +27,6 @@ $(function () {
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
                         _this.info = rs.data;
-
-                        //生日只能点击一次
-                        if (rs.data.Birthday.toString().indexOf('1949') > -1) {
-                            _this.btn = false;
-                        }else{
-                            $('.xingm').attr('href','javascript:;')
-                        }
                         $.RMLOAD()
 
                     }
