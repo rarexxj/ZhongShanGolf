@@ -2,6 +2,7 @@
     var status = $("#Status").val();
     var name = $("#Name").val();
     var goodsNo = $("#GoodsNo").val();
+    var categoryId = $("#CategoryId").val();
 
     var goodsTable = $('#GoodsTable').dataTable({
         "processing": true,
@@ -10,7 +11,7 @@
             "url": url_loadPage,
             "data": function (d) {
                 //添加额外的参数传给服务器
-                d.extra_search = { "Name": name, "Status": status, "GoodsNo": goodsNo };
+                d.extra_search = { "Name": name, "Status": status, "GoodsNo": goodsNo, "CategoryId": categoryId };
             }
         },
         "sorting": [[2, "desc"]],
@@ -90,6 +91,7 @@
         name = $("#Name").val();
         goodsNo = $("#GoodsNo").val();
         status = $("#Status").val();
+        categoryId = $("#CategoryId").val();
         goodsTable.api().ajax.reload();
     });
 

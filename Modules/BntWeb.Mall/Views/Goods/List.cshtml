@@ -1,6 +1,7 @@
 ﻿@using System.Web.Optimization
 @using Autofac
 @using BntWeb.Environment
+@using BntWeb.Mall.Models
 @using BntWeb.Security
 @using BntWeb.Security.Identity
 @{
@@ -25,10 +26,28 @@
             <label class="col-sm-4 col-md-3 control-label no-padding-right" for="Name"> 商品名称 </label>
             <div class="col-sm-8 col-md-9">
                 <div class="clearfix">
-                    <input type="text" id="Name" name="Name" placeholder="商品名称" value="" class="col-md-12" />
+                    <input type="text" id="Name" name="Name" placeholder="商品名称" value="" class="col-md-12"/>
                 </div>
             </div>
         </div>
+
+        @if (ViewBag.MallType == MallType.MoneyMall)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 query-form-item">
+                <label class="col-sm-4 col-md-3 control-label no-padding-right" for="CategoryId"> 商品分类 </label>
+                <div class="col-sm-8 col-md-9">
+                    <div class="clearfix">
+                        <select id="CategoryId" name="CategoryId">
+                            <option value="">所有</option>
+                            <option value="c4732719-ad26-45ca-a457-a03a8a394f1f">辛普森</option>
+                            <option value="e2bfbbd9-617f-4763-a3d7-1cb0ea66bcca">课程</option>
+                            <option value="f66374dd-c9a1-4f8d-85e1-c9c57424fc51">练习卡</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        }
+
         <div class="col-sm-6 col-md-4 col-lg-3 query-form-item">
             <label class="col-sm-4 col-md-3 control-label no-padding-right" for="GoodsNo"> 货号 </label>
             <div class="col-sm-8 col-md-9">

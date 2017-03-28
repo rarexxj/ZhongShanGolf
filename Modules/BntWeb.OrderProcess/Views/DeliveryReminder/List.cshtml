@@ -69,7 +69,7 @@
 @section Scripts {
     @Scripts.Render("~/js/admin/jquery-datatable")
     <script type="text/javascript">
-        var url_loadPage = "@Url.Action("ListOnPage", "DeliveryReminder", new {area = OrderProcessModule.Area})";
+        var url_loadPage = "@Url.Action("ListOnPage", "DeliveryReminder", new {area = OrderProcessModule.Area, orderType = ViewBag.OrderType })";
         var url_detail = "@Url.Action("Detail", "Admin", new {area = OrderProcessModule.Area})";
     </script>
     @Scripts.Render("~/js/admin/order/reminder/list")

@@ -74,7 +74,7 @@
         </div>
 
 
-        <div class="col-sm-6 col-md-4 col-lg-3 query-form-item">
+        @*<div class="col-sm-6 col-md-4 col-lg-3 query-form-item">
             <label class="col-sm-4 col-md-4 control-label no-padding-right" for="RefundStatus"> 退款状态 </label>
             <div class="col-sm-8 col-md-8">
                 <div class="clearfix">
@@ -86,7 +86,7 @@
                     </select>
                 </div>
             </div>
-        </div>
+        </div>*@
         <div class="col-sm-6 col-md-4 col-lg-3 query-form-item">
             <label class="col-sm-4 col-md-4 control-label no-padding-right" for="CreateTimeBegin"> 开始时间 </label>
             <div class="col-sm-8 col-md-8">
@@ -153,7 +153,7 @@
     @Scripts.Render("~/js/admin/jquery-datatable")
 
     <script type="text/javascript">
-        var url_loadPage = "@Url.Action("ListOnPage", "Admin", new {area = OrderProcessModule.Area})";
+        var url_loadPage = "@Url.Action("ListOnPage", "Admin", new {area = OrderProcessModule.Area, orderType= ViewBag.OrderType })";
         var url_detail = "@Url.Action("Detail", "Admin", new {area = OrderProcessModule.Area})";
     </script>
 
