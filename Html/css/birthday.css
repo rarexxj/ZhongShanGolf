@@ -1,0 +1,29 @@
+.addaddress {
+    border-top: 0.01rem solid #e8e8e8;
+}
+.addaddress .line {
+    padding: 0 0.15rem;
+    background: #fff;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    border-bottom: 0.01rem solid #e8e8e8;
+}
+.addaddress .date {
+    width: 6.1rem;
+    height: 0.88rem;
+    border: 0;
+    font-size: 0.3rem;
+}
+.addaddress .submit {
+    width: 6.1rem;
+    height: 0.86rem;
+    border-radius: 8px;
+    background-color: #122b60;
+    position: fixed;
+    bottom: 0.36rem;
+    font-size: 0.3rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.86rem;
+    left: 0.16rem;
+}

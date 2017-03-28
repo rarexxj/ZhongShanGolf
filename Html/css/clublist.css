@@ -1,0 +1,50 @@
+.mainbox{
+    width:100%;
+}
+.main{
+    padding:0.2rem 0.2rem 0.3rem 0.2rem;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 0.01rem solid #eaeaea;
+}
+.pro-img{
+    width:100%;
+    height:2.38rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.pro-int{
+    width:100%
+}
+.pro-int-time{
+    font-size: 0.22rem;
+    color: #999999;
+    display: block;
+    line-height: 1;
+}
+.pro-int-title{
+    font-size: 0.24rem;
+    color: #333333;
+    display: block;
+    line-height: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 0.27rem;
+    margin-bottom: 0.2rem;
+}
+.pro-int-box{
+    width:70%;
+}
+.pro-join{
+    width:1.18rem;
+    height:0.48rem;
+    line-height: 0.48rem;
+    font-size: 0.22rem;
+    background-color: #122b60;
+    color: #fff;
+    text-align: center;
+    margin-top: 0.26rem;
+}
