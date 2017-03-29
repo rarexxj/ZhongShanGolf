@@ -14,7 +14,6 @@ $(function () {
             $.oppo('请输入密码', 1)
             return false;
         }
-
         ajax();
     })
 
