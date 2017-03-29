@@ -4,7 +4,7 @@
 
 .history .delete {
     position: absolute;
-    font-size: 0.3rem;
+    font-size: 0.24rem;
     line-height: 0.24rem;
     color: #999999;
     right: 0.15rem;
@@ -17,7 +17,7 @@
 }
 
 .history {
-    width: 7.5rem;
+    width: 100%;
 }
 
 .content {
@@ -26,23 +26,17 @@
 }
 
 .content ul {
-    padding: 0 0.12rem;
 }
 
 .history .content ul {
-    width: 7.26rem;
+    width: 6.48rem;
 }
 
 .history .content li {
     float: left;
-    width: 3.53rem;
-    margin-right: 0.11rem;
-    margin-bottom: 0.11rem;
-    border: 0.01rem solid #dddddd;
-    padding-bottom: 0.2rem;
-    background: #fff;
-    padding-top: 0.5rem;
-    position: relative;
+    width: 3.15rem;
+    margin-right: 0.09rem;
+    margin-bottom: 0.1rem;
 }
 
 .history .content li:nth-child(2n) {
@@ -50,23 +44,27 @@
 }
 .history .content a {
     display: block;
+    padding: 0.35rem 0.15rem 0.15rem 0.15rem;
+    background: #fff;
+    width: 2.84rem;
+    position: relative;
 }
 
 .history .content .img {
-    width: 3.53rem;
-    height: 3.55rem;
+    width: 2.84rem;
+    height: 3.17rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-bottom:0.01rem solid #ddd;
+
 }
 
 .history .content .tt {
+    font-size: 0.24rem;
+    color: #666666;
     line-height: 1;
     overflow: hidden;
-    font-size: 0.28rem;
     text-align: center;
-    color: #3d3d45;
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 80%;
@@ -105,7 +103,7 @@
 .search-box .nothing .tbs {
     width: 1.51rem;
     height: 1.5rem;
-    margin: 2.54rem auto 0;
+    margin: 1rem auto 0;
 }
 
 .search-box .nothing p {
@@ -127,4 +125,71 @@
     border: 1px solid #dbcb8c;
     margin: 0.47rem auto;
     border-radius: 0.08rem;
+}
+
+.hot-content ul {
+    width: 6.48rem;
+}
+
+.hot-content li {
+    float: left;
+    width: 3.15rem;
+    margin-right: 0.09rem;
+    margin-bottom: 0.1rem;
+}
+
+.hot-content li:nth-child(2n) {
+    margin-right: 0;
+}
+.hot-content a {
+    display: block;
+    padding: 0.1rem 0.15rem 0.15rem 0.15rem;
+    background: #fff;
+    width: 2.84rem;
+    position: relative;
+}
+
+.hot-content .img {
+    width: 2.84rem;
+    height: 3.17rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.hot-content .tt {
+    font-size: 0.24rem;
+    color: #666666;
+    line-height: 1;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 0.16rem;
+    margin-bottom: 0.1rem;
+}
+
+.hot-content .price {
+    font-family: 'Arial';
+    color: #cebd70;
+    font-size: 0.28rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.hot-content .timen {
+    position: absolute;
+    font-size: 0.24rem;
+    line-height: 0.3rem;
+    color: #666;
+    right: 0.1rem;
+    top: 0.1rem;
+}
+.hot-p{
+    margin-bottom: 0.3rem;
+    padding-top: 0.2rem;
+    border-top:0.01rem solid #ddd;
 }

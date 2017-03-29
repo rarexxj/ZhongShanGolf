@@ -1,21 +1,18 @@
-#index{
-
-}
-.box {
-    width: 100vw;
+#main{
+    width:100vw;
     height: 100vh;
 }
+.box {
+}
 
-#index {
+.scrollbox{
     width: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding-bottom: 1.28rem;
-    overflow-scrolling: touch;
-    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
 }
 
 .index-search {
@@ -64,16 +61,16 @@
     padding-left: 0.33rem;
 }
 .mainbox{
-    height:2.2rem;
     width:100%;
 }
 .main{
     padding:0.27rem;
     background-color: #fff;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.13rem;
     border-top: 0.01rem solid #eeeeee;
     border-bottom: 0.01rem solid #eeeeee;
     position: relative;
+    display: block;
 }
 .main .pro-img{
     width:1.8rem;
@@ -82,11 +79,17 @@
     background-repeat: no-repeat;
     margin-right: 0.54rem;
 }
+.pro-int{
+    width:3.52rem;
+}
 .pro-int-name{
     font-size: 0.28rem;
     color: #333333;
     font-weight: bold;
     margin-bottom: 0.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .pro-int-int{
     font-size: 0.2rem;
@@ -210,26 +213,24 @@
     color: #fff;
 }
 
-.search-box .nothing {
+.nothing {
     position: absolute;
     width: 100%;
-    height: 100%;
     left: 0;
-    top: 0;
+    top: 0.8rem;
     z-index: 4;
     background: #f7f7f7;
-    display: none;
 }
 
-.search-box .nothing .tbs {
+.nothing .tb {
     width: 1.51rem;
     height: 1.5rem;
     margin: 2.54rem auto 0;
-    background: url("img/img37.png") no-repeat;
+    background: url("img/img9.png") no-repeat;
     background-size: cover;
 }
 
-.search-box .nothing p {
+.nothing p {
     font-size: 0.3rem;
     color: #666666;
     line-height: 0.3rem;

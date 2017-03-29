@@ -8,11 +8,13 @@ $(function () {
             ajaxdata:{
                 pageNo: '1',
                 limit: '10'
-            }
+            },
+            hotinfo:[]
         },
         ready: function () {
             var _this = this;
             _this.infoajax();
+            _this.hotsell();
             _this.$nextTick(function () {
                 _this.deletejilu();
             })
@@ -73,6 +75,18 @@ $(function () {
                         $.oppo('成功清理浏览记录', 1, function () {
                             window.location.href = "/Html/html/personalcenter/personalcenter.html"
                         })
+                    }
+                })
+            },
+            hotsell:function () {
+                var _this=this;
+                $.ajax({
+                    url:'/Api/v1/Mall/Goods/HotCakes',
+                    type:'get',
+                    dataType:'json'
+                }).done(function (rs) {
+                    if (rs.returnCode = '200') {
+                        _this.hotinfo=rs.data;
                     }
                 })
             }

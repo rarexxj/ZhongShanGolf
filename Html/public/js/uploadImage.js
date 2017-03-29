@@ -176,13 +176,13 @@ function uploadImage(imageData,file) {
         $.ajax({
             //contentType: false,    //不可缺
             //processData: false,    //不可缺
-            url: '/Api/v1/Member/' + $.get_user('Id') + '/Avatar',
+            url: '/Api/v1/File',
             data:{
                 data:imageData,
                 fileName:file.name
             },
             dataType:'json',
-            type: 'Patch'
+            type: 'POST'
         }).done(function (json) {
             if (json.returnCode == 200) {
                 var data = json.data;

@@ -1,5 +1,5 @@
 $(function () {
-    $.ADDLOAD();
+    // $.ADDLOAD();
     var data={
         KeyWord:decodeURIComponent(decodeURIComponent($.getUrlParam('key'))),
         SortType:'0',

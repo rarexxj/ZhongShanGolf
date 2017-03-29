@@ -6,7 +6,7 @@ $(function () {
             proinfo: [],
             infodata: {
                 wordKey: '',
-                goodsCategory: 1,
+                goodsCategory: 2,
                 pageNo: 1,
                 limit: 10
             },

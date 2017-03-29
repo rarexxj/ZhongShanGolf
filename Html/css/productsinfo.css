@@ -1,5 +1,10 @@
 .infoBox{
-    background: #f3fbfd;
+    background: #f7f7f7;
+    width:100%;
+}
+.swiper-container{
+    height:6.4rem;
+    width:100%;
 }
 .swiper-pagination-bullet {
     background: url("img/logo25.png") no-repeat center;
@@ -41,7 +46,7 @@
 .pro-info .content .price {
     font-size: 0.5rem;
     line-height: 0.36rem;
-    color: #cebd78;
+    color: #f12c2c;
     font-family: 'Arial';
     margin-top: 0.28rem;
 }
@@ -149,14 +154,14 @@
 }
 
 .pro-info .information .infoajax {
-    width:7.5rem;
+    width:6.4rem;
     overflow: hidden;
 }
 
 .goshop {
     width: 100%;
     background: #fff;
-    height: 1.28rem;
+    height: 1rem;
     border-top: 1px solid #e8e8e8;
     position: fixed;
     left: 0;
@@ -165,33 +170,36 @@
 }
 
 .goshop .tb {
-    width: 0.46rem;
-    height: 0.46rem;
+    width: 0.36rem;
+    height: 0.34rem;
     margin: 0 auto 0;
 }
 
 .goshop span {
     display: block;
     text-align: center;
-    font-size: 0.3rem;
+    font-size: 0.24rem;
     line-height: 0.24rem;
-    color: #8d8169;
-    margin-top: 0.05rem;
+    color: #999;
+    margin-top: 0.1rem;
 }
 
 .goshop #coll {
     float: left;
-    width: 1.52rem;
+    width: 1.3rem;
     border-right: 1px solid #e8e8e8;
     box-sizing: border-box;
     margin-top: 0.24rem;
 }
 
 .goshop #coll .tb {
-    background: url("img/logo14.png") no-repeat;
+    background: url("img/logo34.png") no-repeat;
     background-size: cover;
 }
-
+.goshop #coll.cur .tb {
+    background: url("img/logo33.png") no-repeat;
+    background-size: cover;
+}
 .bujiaj{
     font-size: 0.32rem;
     color: #666;
@@ -222,13 +230,13 @@
 }
 
 .goshop .gobuy {
-    width:2.22rem;
-    height: 1.28rem;
-    background: #dccc8d;
+    width:5.1rem;
+    height: 1rem;
+    background: #f12c2c;
     color: #fff;
     font-size: 0.3rem;
     text-align: center;
-    line-height: 1.28rem;
+    line-height: 1rem;
     float: right;
 }
 
@@ -291,7 +299,7 @@
 }
 
 .size-mask .size-box .size-info {
-    width: 7.2rem;
+    width: 6.1rem;
     height: 2.27rem;
     border-bottom: 1px solid #e8e8e8;
     padding: 0 0.15rem;
@@ -309,7 +317,7 @@
 }
 
 .size-mask .size-box .price {
-    color: #cebd78;
+    color: #f12c2c;
     font-size: 0.38rem;
 }
 
@@ -343,7 +351,7 @@
 }
 
 .size-mask .size-box .tc li.choose-cur {
-    background: #cebd78;
+    background: #122b60;
     color: #fff;
 }
 
@@ -539,10 +547,10 @@
     border-radius: 6px;
 }
 .pro-in-gobuy {
-    width: 3.38rem;
+    width: 6rem;
     height: 0.94rem;
     line-height: 0.94rem;
-    background-color: #c8994c;
+    background-color: #f12c2c;
     box-sizing: border-box;
     font-size: 0.3rem;
     color: #1c1f23;

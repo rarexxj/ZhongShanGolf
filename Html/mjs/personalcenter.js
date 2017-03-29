@@ -1,14 +1,16 @@
 $(function () {
-    // $.ADDLOAD();
+    $.ADDLOAD();
     $.checkuser();
     new Vue({
         el: '#percen',
         data: {
-            info: []
+            info: [],
+            ideninfo:[]
         },
         ready: function () {
             var _this = this;
             _this.infoajax();
+            _this.idenajax();
             _this.$nextTick(function () {
                 _this.guanzhu();
 
@@ -20,10 +22,10 @@ $(function () {
                 $.ajax({
                     url: '/Api/v1/Member/CenterInfo',
                     type: 'get',
-                    dataType: "json"
+                    dataType: 'json'
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
-                        _this.info = rs.data
+                        _this.info = rs.data;
                         $.RMLOAD();
                     }
                 })
@@ -34,6 +36,18 @@ $(function () {
                 })
                 $('.mask').on('click', function () {
                     $(this).stop().fadeOut();
+                })
+            },
+            idenajax:function () {
+                var _this=this;
+                $.ajax({
+                    url:'/Api/v1/MyMember',
+                    type:'get',
+                    dataType:'json'
+                }).done(function (rs) {
+                    if (rs.returnCode == '200') {
+                        _this.ideninfo = rs.data;
+                    }
                 })
             }
         }
