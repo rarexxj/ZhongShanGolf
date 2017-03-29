@@ -87,6 +87,9 @@
 			            case 4:
 			                render += '<span class="red">已关闭</span>';
 			                break;
+			            case -1:
+			                render += '<span class="red">已删除</span>';
+			                break;
 			            default:
 			        }
 			        return render;
