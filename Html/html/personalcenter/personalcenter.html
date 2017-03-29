@@ -28,17 +28,17 @@
 <div class="per-cen pb140" id="percen">
     <div class="head">
         <a href="/Html/html/personalcenter/myinfo.html">
-            <div class="img fl"><img v-if="info.Avatar" :src="info.Avatar.RelativePath" width="100%" height="100%" alt=""><img v-else="" src="/Html/css/img/img08.jpg" width="100%" height="100%" alt=""></div>
+            <div class="img fl"><img v-if="ideninfo.Avatar" :src="ideninfo.Avatar.RelativePath" width="100%" height="100%" alt=""><img v-else="" src="/Html/css/img/img08.jpg" width="100%" height="100%" alt=""></div>
             <div class="info fl">
-                <div class="name">{{info.NickName}}</div>
-                <div class="ph">{{info.PhoneNumber}}</div>
+                <div class="name">{{ideninfo.NickName}}</div>
+                <div class="ph">{{ideninfo.PhoneNumber}}</div>
             </div>
             <span class="jt2"></span>
         </a>
     </div>
     <div class="money f-cb">
         <div class="right fl">
-            <a href="/Html/html/personalcenter/integral.html">
+            <a href="/Html/html/personalcenter/integralshop.html">
                 <div class="p">我的积分 <span class="jf">{{info.Integral}}</span></div>
             </a>
         </div>
@@ -54,19 +54,19 @@
         <div class="list f-cb">
             <a href="/Html/html/personalcenter/myorder.html?orderType=1" class="pay">
                 <div class="tt">待付款</div>
-                <i v-if="state.PendingPayment != 0">{{info.PendingPayment}}</i>
+                <i v-if="info.PendingPayment != 0">{{info.PendingPayment}}</i>
             </a>
             <a href="/Html/html/personalcenter/myorder.html?orderType=2" class="get">
                 <div class="tt">待发货</div>
-                <i v-if="state.WaitingForReceiving != 0">{{info.WaitingForReceiving}}</i>
+                <i v-if="info.WaitingForReceiving != 0">{{info.WaitingForReceiving}}</i>
             </a>
             <a href="/Html/html/personalcenter/myorder.html?orderType=3" class="evaluate">
                 <div class="tt">待收货</div>
-                <i v-if="state.WaitingForEvaluate != 0">{{info.WaitingForEvaluate}}</i>
+                <i v-if="info.WaitingForEvaluate != 0">{{info.WaitingForEvaluate}}</i>
             </a>
             <a href="/Html/html/personalcenter/myorder.html?orderType=4" class="service">
                 <div class="tt">已完成</div>
-                <i v-if="state.HasRefund != 0">{{info.HasRefund}}</i>
+                <i v-if="info.HasRefund != 0">{{info.HasRefund}}</i>
             </a>
         </div>
     </div>
@@ -119,18 +119,18 @@
         </div>
     </div>
 </div>
-<!--<div class="new-loading">-->
-    <!--<ul class="small-loading">-->
-        <!--<li></li>-->
-        <!--<li></li>-->
-        <!--<li></li>-->
-        <!--<li></li>-->
-        <!--<li></li>-->
-        <!--<li></li>-->
-        <!--<li></li>-->
-        <!--<li></li>-->
-    <!--</ul>-->
-<!--</div>-->
+<div class="new-loading">
+    <ul class="small-loading">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
 <script src="/Html/mjs/personalcenter.js"></script>
 </body>
 </html>

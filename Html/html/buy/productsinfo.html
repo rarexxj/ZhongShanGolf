@@ -20,9 +20,9 @@
     <script type="text/javascript" src="/Html/public/js/swiper.min.js"></script>
     <script type="text/javascript" src="/Html/public/js/main.js"></script>
     <script type="text/javascript" src="/Html/public/js/vue.js"></script>
-    <title>成都猫眼食品有限责任公司</title>
+    <title>辛普森传承会</title>
 </head>
-<body>
+<body style="background-color: #f7f7f7">
 <div class="infoBox" id="main">
     <div class="pro-info pb120">
         <div id="pro-info">
@@ -37,35 +37,28 @@
                 <div class="name">{{info.Name}}</div>
                 <div class="price">
                     <span class="nowp">¥<span class="int">{{info.Price.toFixed(2)}}</span></span>
-                    <span class="old">价格 <span class="oldp">¥<i>{{info.OriginalPrice.toFixed(2)}}</i></span></span>
-                    <span class="collect fr" v-if="info.HasCollect">已加入收藏</span>
-                    <span class="collect fr" v-else="">加入收藏</span>
+                    <!--<span class="old">价格 <span class="oldp">¥<i>{{info.OriginalPrice.toFixed(2)}}</i></span></span>-->
                 </div>
                 <div class="freight clearfix"><span class="yunf fl">运费：¥0.00</span><span class="buynum fr">{{info.SalesVolume}}人已付款</span>
                 </div>
             </div>
-            <div class="tips">
-                <span style="margin-right: 0.82rem;margin-left: 0.32rem;">正品保障</span>
-                <span>七天内无理由放心退</span>
-            </div>
+            <!--<div class="tips">-->
+                <!--<span style="margin-right: 0.82rem;margin-left: 0.32rem;">正品保障</span>-->
+                <!--<span>七天内无理由放心退</span>-->
+            <!--</div>-->
             <div class="goshop clearfix">
-                <a href="../personalcenter/personalcenter.html" class="coll fl" id="coll">
+                <div :class="['coll',info.HasCollect?'cur':'']" id="coll">
                     <div class="tb"></div>
-                    <span>我的</span>
-                </a>
-                <a href="../shopcar/shopcar.html" class="goshopc fl">
-                    <div class="tb"></div>
-                    <span>购物车</span>
-                </a>
-                <div class="addshopc fl">加入购物车</div>
+                    <span>收藏</span>
+                </div>
                 <div class="gobuy fr">立即购买</div>
             </div>
         </div>
         <div class="size">选择规格 <i></i></div>
         <div class="information">
             <div class="btns f-cb">
-                <div class="btn cur">商品详情</div>
-                <div class="btn eva-btn">销量评价</div>
+                <div class="btn">商品详情</div>
+                <!--<div class="btn eva-btn">销量评价</div>-->
             </div>
             <div class="info">
                 <div class="infoajax">
@@ -154,8 +147,6 @@
                 </div>
             </div>
             <div class="get-btn f-cb">
-                <!--<div class="pro-in-gobuy">确定</div>-->
-                <div class="pro-in-gocart fl">加入购物车</div>
                 <div class="pro-in-gobuy fr">立即购买</div>
             </div>
             <div class="close"></div>

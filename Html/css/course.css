@@ -1,3 +1,7 @@
+#main{
+    width:100vw;
+    height: 100vh;
+}
 .index-search {
     height: 0.5rem;
     padding:0.11rem 0;
@@ -186,4 +190,28 @@
     color: #666;
     display: block;
     line-height: 0.3rem;
+}
+.nothing {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0.8rem;
+    z-index: 4;
+    background: #f7f7f7;
+}
+
+.nothing .tb {
+    width: 1.51rem;
+    height: 1.5rem;
+    margin: 2.54rem auto 0;
+    background: url("img/img9.png") no-repeat;
+    background-size: cover;
+}
+
+.nothing p {
+    font-size: 0.3rem;
+    color: #666666;
+    line-height: 0.3rem;
+    text-align: center;
+    margin-top: 0.69rem;
 }
