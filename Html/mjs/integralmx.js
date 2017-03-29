@@ -4,7 +4,6 @@ $(function () {
     new Vue({
         el: '#main',
         data: {
-            info: [],
             ajaxdata: {
                 pageNo: 1,
                 limit: 5,
@@ -14,26 +13,12 @@ $(function () {
         },
         ready: function () {
             var _this = this;
-            _this.infoajax();
+            _this.bill();
             _this.$nextTick(function () {
-                _this.bill();
                 _this.updownload();
             })
         },
         methods: {
-            infoajax: function () {
-                //积分渲染
-                var _this = this;
-                $.ajax({
-                    url: "/Api/v1/Wallet/Integral",
-                    type: 'get'
-                }).done(function (rs) {
-                    if (rs.returnCode = '200') {
-                        _this.info = rs.data;
-
-                    }
-                })
-            },
             bill: function () {
                 var _this=this;
                 //资金变动记录渲染

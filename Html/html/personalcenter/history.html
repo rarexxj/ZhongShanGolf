@@ -49,7 +49,23 @@
             <div class="tbs"
                  style="background: url('/Html/css/img/nohis.png') no-repeat center center;background-size: contain"></div>
             <p>无浏览记录，赶紧去逛逛吧</p>
-            <a href="/Index.html" class="NoBnt">随便逛逛</a>
+            <!--<a href="/Index.html" class="NoBnt">随便逛逛</a>-->
+            <div>
+                <p class="hot-p">热销单品</p>
+                <div class="hot-content">
+                    <ul class="clearfix">
+                        <li v-for="list in hotinfo.Goods">
+                            <a :href="'/Html/html/buy/productsinfo.html?id='+list.Id">
+                                <div class="img"
+                                     :style="{backgroundImage: 'url('+list.MainImage.MediumThumbnail+')'}"></div>
+                                <div class="tt">{{list.Name}}</div>
+                                <div class="price">¥{{list.ShopPrice.toFixed(2)}}</div>
+                                <span class="timen">{{list.BrowseTime}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

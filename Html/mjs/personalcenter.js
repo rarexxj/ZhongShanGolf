@@ -25,7 +25,7 @@ $(function () {
                     dataType: 'json'
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
-                        _this.info = rs.data
+                        _this.info = rs.data;
                         $.RMLOAD();
                     }
                 })
@@ -46,8 +46,7 @@ $(function () {
                     dataType:'json'
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
-                        _this.ideninfo = rs.data
-                        $.RMLOAD();
+                        _this.ideninfo = rs.data;
                     }
                 })
             }
