@@ -10,7 +10,8 @@ $(function () {
                 orderType: orderType,
                 pageNo: 1,
                 limit: 10,
-                keywords:''
+                keywords:'',
+                orderCategory:0
             }
         },
         ready: function () {
@@ -32,7 +33,7 @@ $(function () {
             infoajax: function () {
                 var _this = this;
                 $.ajax({
-                    url: '/Api/v1/Mall/MyOrder',
+                    url: '/Api/v1/Mall/Order',
                     data: _this.data1,
                     type: 'get'
                 }).done(function (rs) {

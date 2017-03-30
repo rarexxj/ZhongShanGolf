@@ -141,7 +141,7 @@
 }
 
 .confirm-order .line .tt {
-    font-size: 0.3rem;
+    font-size: 0.26rem;
     line-height: 0.86rem;
     color: #333333;
 }
@@ -285,34 +285,33 @@
 }
 .car-list{
     width:100%;
-    height:2.1rem;
+    height:1rem;
     background-color: #fff;
-    /*position: absolute;*/
-    /*bottom:0;*/
+    position: absolute;
+    bottom:0;
 }
 .hj{
-    font-size: 0.3rem;
-    color: #1c1f23;
-    text-align: center;
-    line-height: 0.88rem;
+    font-size: 0.28rem;
+    color: #666666;
+    margin-left: 0.14rem;
+    line-height: 1rem;
 }
 .hj .price{
      font-size: 0.36rem;
-     color: #c8994c;
+     color: #f12c2c;
     font-weight: bold;
      text-align: center;
-     line-height: 0.88rem;
+     line-height:1rem;
  }
 .balance{
-    width:6.2rem;
-    height: 0.86rem;
+    width:29%;
+    height: 1rem;
     text-align: center;
-    line-height: 0.86rem;
+    line-height: 1rem;
     font-size: 0.3rem;
     color: #fff;
-    background-color: #c8994c;
+    background-color: #f12c2c;
     display: block;
-    border-radius: 6px;
     margin:0 auto;
 }
 .confirm-youhjt {
@@ -620,3 +619,9 @@
     /*height:100%;*/
     /*overflow: auto;*/
 /*}*/
+
+.zt-address .amo,.zt-tel .amo{
+    font-size: 0.24rem;
+    color: #333;
+    line-height: 0.86rem;
+}

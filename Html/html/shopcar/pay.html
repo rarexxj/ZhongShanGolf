@@ -13,7 +13,7 @@
     <meta name="author" content="杭州博采网络科技股份有限公司-高端网站建设-http://www.bocweb.cn"/>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>成都猫眼食品有限责任公司</title>
+    <title>辛普森传承会</title>
     <script src="/Html/public/js/jQuery.js"></script>
     <script src="/Html/public/js/vue.js"></script>
     <script src="/Html/public/js/main.js"></script>
@@ -34,16 +34,12 @@
                 <div class="tt fl">实付金额</div>
                 <div class="price fr npri"><span class="amo">¥<i class="shifu">{{zongji}}</i></span></div>
             </div>
-            <div class="line bb">
-                <div class="tt fl">优惠券</div>
-                <div class="price fr npri"><span class="amo">¥<i class="yhq">{{yhq}}</i></span></div>
-            </div>
             <div class="line" style="margin-top: 0.2rem">
                 <div class="tt fl">选择支付方式</div>
-                <div class="paymore fr">
-                    还需支付:
-                    <span class="price mpri">¥<i class="haixu">{{money}}</i></span>
-                </div>
+                <!--<div class="paymore fr">-->
+                    <!--还需支付:-->
+                    <!--<span class="price mpri">¥<i class="haixu">{{money}}</i></span>-->
+                <!--</div>-->
             </div>
             <div class="payline f-cb weixin pay-btn cur">
                 <div class="tb fl"></div>
@@ -53,21 +49,7 @@
             <input type="hidden" name="orderId" value="1" id="orderid">
             <input type="hidden" name="paymentCode" value="weixin" id="paymentCode">
             <input type="hidden" name="useBalance" value="0" id="usebalance">
-            <div class="payline f-cb alipay pay-btn">
-                <div class="tb fl"></div>
-                <div class="tt fl">支付宝</div>
-                <div class="btn"></div>
-            </div>
-            <!--<div class="payline f-cb yinlian pay-btn">-->
-            <!--<div class="tb fl"></div>-->
-            <!--<div class="tt fl">中国银联</div>-->
-            <!--<div class="btn"></div>-->
-            <!--</div>-->
-            <div class="payline f-cb huodao pay-btn">
-                <div class="tb fl"></div>
-                <div class="tt fl">货到付款</div>
-                <div class="btn"></div>
-            </div>
+
             <input id="subimitButton" type="submit" class="bot-btn" value="立即支付">
         </form>
     </div>
