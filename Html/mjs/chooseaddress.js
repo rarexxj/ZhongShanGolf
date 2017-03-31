@@ -2,7 +2,7 @@ $(function () {
     $.checkuser();
     var id = $.getUrlParam('id'); //购物车id
     var gid = $.getUrlParam('gid');
-    var hgid=$.getUrlParam('hgid');//积分换购id
+    var type=$.getUrlParam('type') //1是正常 2是积分换购
     $.ADDLOAD();
 
     new Vue({
@@ -23,7 +23,7 @@ $(function () {
                 var _this = this;
                 $.ajax({
                     url: '/Api/v1/Member/Address',
-                    dataType:'json',
+                    dataType: 'json',
                     type: 'get'
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
@@ -35,21 +35,21 @@ $(function () {
             link: function () {
                 $('#address').on('click', '.addlist a', function () {
                     var addid = $(this).parents('.addlist').attr('data-addid');
-                    if (id) {
-                        window.location.href = '/Html/html/shopcar/settlement.html?id=' + id + '&addid=' + addid
-                    } else if(gid){
+                    if(type==2){
+                        window.location.href = '/Html/html/shopcar/integralsettlement.html?gid=' + gid + '&addid=' + addid
+                        return false;
+                    }
+                    if (gid) {
                         window.location.href = '/Html/html/shopcar/settlement.html?gid=' + gid + '&addid=' + addid
-                    }else if(hgid){
-                        window.location.href = '/Html/html/personalcenter/jifensettlement.html?hgid=' + hgid + '&addid=' + addid
                     }
                 });
                 $('.submit').on('click', function () {
-                    if (id) {
-                        window.location.href = '/Html/html/shopcar/chooseaddaddress.html?id=' + id
-                    } else if(gid){
+                    if(type==2){
+                        window.location.href = '/Html/html/shopcar/chooseaddaddress.html?gid=' + gid+'&type='+2
+                        return false;
+                    }
+                   if (gid) {
                         window.location.href = '/Html/html/shopcar/chooseaddaddress.html?gid=' + gid
-                    }else if(hgid){
-                        window.location.href = '/Html/html/shopcar/chooseaddaddress.html?hgid=' + hgid
                     }
                 })
             }

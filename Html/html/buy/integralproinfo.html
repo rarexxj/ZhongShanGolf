@@ -42,15 +42,7 @@
                 <div class="freight clearfix"><span class="yunf fl">运费：¥0.00</span><span class="buynum fr">{{info.SalesVolume}}人已付款</span>
                 </div>
             </div>
-            <!--<div class="tips">-->
-                <!--<span style="margin-right: 0.82rem;margin-left: 0.32rem;">正品保障</span>-->
-                <!--<span>七天内无理由放心退</span>-->
-            <!--</div>-->
             <div class="goshop clearfix">
-                <!--<div :class="['coll',info.HasCollect?'cur':'']" id="coll">-->
-                    <!--<div class="tb"></div>-->
-                    <!--<span>收藏</span>-->
-                <!--</div>-->
                 <div class="gobuy fr">立即兑换</div>
             </div>
         </div>
@@ -58,39 +50,10 @@
         <div class="information">
             <div class="btns f-cb">
                 <div class="btn">商品详情</div>
-                <!--<div class="btn eva-btn">销量评价</div>-->
             </div>
             <div class="info">
                 <div class="infoajax">
                     {{{info.Description}}}
-                </div>
-                <div class="evaluateajax">
-                    <div class="memlist f-cb" id="head">
-                        <ul>
-                            <li v-for="headlist in headinfo | limitBy 9"
-                                :style="{backgroundImage:'url('+headlist.Avatar.SmallThumbnail+')'}"></li>
-
-                            <li style="background-image:url('/Html/css/img/img11.png')" v-if="headinfo.length>9"></li>
-                        </ul>
-                    </div>
-                    <div class="che-com" id="che_com">
-                        <div class="content" v-for="list in evainfo.Evaluates">
-                            <div class="top f-cb">
-                                <div class="name fl" v-if="list.IsAnonymity">匿名</div>
-                                <div class="name fl" v-else="">{{list.MemberName}}</div>
-                                <ul>
-                                    <li v-for="xing in 5" :class="[$index<list.Score?'cur':'']"></li>
-                                </ul>
-                                <div class="time fr">{{list.EvaluateTime.split(' ')[0]}}</div>
-                            </div>
-                            <div class="words">{{list.Content}}</div>
-                            <div class="reply" v-if="list.ReplyContent">
-                                {{list.ReplyContent}}
-                                <div class="time">{{list.ReplyTime}}</div>
-                                <i></i>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -102,7 +65,7 @@
             <div class="size-info f-cb">
                 <div class="img fl" :style="{backgroundImage: 'url('+imgs+')'}"></div>
                 <div class="info fl">
-                    <p class="price">¥{{info.Price.toFixed(2)}}</p>
+                    <p class="price">{{info.Price}}积分</p>
                     <p>库存 <span class="kc">{{info.Stock}}</span>件</p>
                     <!--<p>选择<span>{{list1.AttributeName}} </span></p>-->
                 </div>

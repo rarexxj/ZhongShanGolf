@@ -20,8 +20,6 @@ $(function () {
                 _this.guige();
                 _this.Calculation();
                 // _this.tab();
-                _this.collect();
-                _this.liuljl();
                 _this.gotobuy();
             })
         },
@@ -111,47 +109,7 @@ $(function () {
             //         $('.evaluateajax').show();
             //     })
             // },
-            //点击收藏
-            collect: function () {
-                var _this = this;
-                $('#main .coll').on('click', function () {
-                    if (!window.TOKEN) {
-                        $.oppo('您还未登陆', 1);
-                    } else {
-                        $.checkuser();
-                        // _this.ajaxadd();
-                        if ($(this).hasClass('cur')) {
-                            _this.ajaxcancel()
-                        } else {
-                            _this.ajaxadd();
-                        }
-                    }
-                })
-            },
-            //取消收藏
-            ajaxcancel: function () {
-                $.ajax({
-                    url: '/Api/v1/Mall/Collect/' + id,
-                    type: 'DELETE'
-                }).done(function (rs) {
-                    if (rs.returnCode == '200') {
-                        $.oppo('您已取消收藏', 2)
-                        $('.goshop .coll').removeClass('cur');
-                    }
-                })
-            },
-            //添加收藏
-            ajaxadd: function () {
-                $.ajax({
-                    url: '/Api/v1/Mall/Collect/' + id,
-                    type: 'post'
-                }).done(function (rs) {
-                    if (rs.returnCode == '200') {
-                        $.oppo('您已添加收藏', 2)
-                        $('.goshop .coll').addClass('cur');
-                    }
-                })
-            },
+
             guigechioce: function () {
                 var _this = this;
                 window.proimg = _this.info.MainImage.MediumThumbnail;
@@ -294,7 +252,7 @@ $(function () {
                                 if ($('.kc').html() == 0) {
                                     $.oppo('库存不足', 1)
                                 } else {
-                                    window.location.href = "/Html/html/shopcar/settlement.html?gid=" + $('.get-btn').attr('data-id') + "|" + $('.getnum .amount').val()
+                                    window.location.href = "/Html/html/shopcar/integralsettlement.html?gid=" + $('.get-btn').attr('data-id') + "|" + $('.getnum .amount').val()
                                 }
 
                             }
@@ -314,17 +272,6 @@ $(function () {
                             }
 
                         }
-                    }
-                })
-
-            },
-            liuljl: function () {
-                var _this = this;
-                $.ajax({
-                    url: '/Api/v1/Mall/Browse/' + id,
-                    type: 'POST'
-                }).done(function (rs) {
-                    if (rs.returnCode == '200') {
                     }
                 })
 

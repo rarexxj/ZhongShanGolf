@@ -133,8 +133,8 @@ $(function () {
     //自动调取后台错误码
     $.nouser = function () {
         $(document).ajaxSuccess(function (a, xhr, settings) {
-            if (xhr.responseText) {
-                var res = JSON.parse(xhr.responseText)
+            if (xhr.responseJSON) {
+                var res = JSON.parse(xhr.responseJSON)
                 if (res.returnCode == '401') {
                     $.clear_user()
                     $.Backlog()

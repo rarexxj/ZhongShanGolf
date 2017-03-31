@@ -1,9 +1,8 @@
 $(function () {
     $.ADDLOAD();
     var reg = /^1[3|4|5|7|8]\d{9}$/;
-    var id = $.getUrlParam('id');
     var gid = $.getUrlParam('gid');
-    var hgid = $.getUrlParam('hgid');
+    var type = $.getUrlParam('type');
 
     $.checkuser();
     new Vue({
@@ -153,12 +152,12 @@ $(function () {
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
                         $.oppo('保存成功', 1);
-                        if (id) {
-                            window.location.href = "/Html/html/shopcar/settlement.html?id=" + id + '&addid=' + rs.data.Id
-                        } else if(gid){
+                        if(type==2){
+                            window.location.href = "/Html/html/shopcar/integralsettlement.html?gid=" + gid + '&addid=' + rs.data.Id
+                            return false;
+                        }
+                        if(gid){
                             window.location.href = "/Html/html/shopcar/settlement.html?gid=" + gid + '&addid=' + rs.data.Id
-                        }else if(hgid){
-                            window.location.href = "/Html/html/personalcenter/jifensettlement.html?hgid=" + hgid + '&addid=' + rs.data.Id
                         }
                     }
                 })
