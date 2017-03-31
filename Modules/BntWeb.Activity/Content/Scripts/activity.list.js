@@ -67,6 +67,16 @@
                     return "";
                 }
             },
+                        {
+                            "mData": "ApplyEndTime", 'sClass': 'left',
+                            "sWidth": "150px",
+                            "mRender": function (data, type, full) {
+                                if (data != null && data.length > 0) {
+                                    return eval('new ' + data.replace(/\//g, '')).Format("yyyy-MM-dd hh:mm:ss");
+                                }
+                                return "";
+                            }
+                        },
             { "mData": "ApplyNum", 'sClass': 'left' },
             { "mData": "MemberName", 'sClass': 'left', "orderable": false },
             

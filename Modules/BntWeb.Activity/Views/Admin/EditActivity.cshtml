@@ -33,7 +33,7 @@
         <input type="hidden" id="Id" name="Id" value="@Model.Id" />
         <div class="col-sm-9">
             <div class="clearfix">
-                <input type="text" id="Title" name="Title" placeholder="用户名" class="col-xs-10 col-sm-5" @(editMode ? "" : "readonly=true") value="@Model.Title" />
+                <input type="text" id="Title" name="Title" placeholder="活动名称" class="col-xs-10 col-sm-5" @(editMode ? "" : "readonly=true") value="@Model.Title" />
             </div>
         </div>
     </div>
@@ -66,6 +66,18 @@
             </span>
         </div>
     </div>
+
+    <div class="space-4"></div>
+    <div class="form-group">
+        <label class="col-sm-1 control-label no-padding-right" for="ApplyEndTime"> 报名截止时间 </label>
+        <div class="col-sm-9">
+            <span class="input-icon">
+                <input type="text" id="ApplyEndTime" name="ApplyEndTime" placeholder="报名截止时间" style="width: 300px;" @(editMode ? "" : "readonly=true") value="@(Model.ApplyEndTime == null ? "" : Model.ApplyEndTime.ToString("yyyy-MM-dd HH:mm:ss"))" />
+                <i class="icon-calendar light-orange"></i>
+            </span>
+        </div>
+    </div>
+
     <div class="space-4"></div>
     <div class="form-group">
         <label class="col-sm-1 control-label no-padding-right" for="Postion"> 活动地点 </label>
@@ -116,7 +128,8 @@
                 var options = $.datepicker.regional["zh-CN"];
                 options["dateFormat"] = "yy-mm-dd";
                 $("#StartTime").datetimepicker(options);
-                $("#EndTime").datetimepicker(options);
+                $("#EndTime").datetimepicker(options); 
+                $("#ApplyEndTime").datetimepicker(options);
             }
 
             bntToolkit.initForm($("#ActivityForm"), {
@@ -128,6 +141,9 @@
                     required: true
                 },
                 EndTime: {
+                    required: true
+                },
+                ApplyEndTime: {
                     required: true
                 },
                 Postion: {
