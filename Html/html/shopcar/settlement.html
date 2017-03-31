@@ -87,7 +87,7 @@
                 <div class="tt fl">商品金额</div>
                 <div class="price fr">¥<span class="amo">{{info.GoodsAmount.toFixed(2)}}</span></div>
             </div>
-            <div class="line" style="margin-top: 0.2rem">
+            <div class="line" style="margin-top: 0.2rem" v-if="info.takeTheir">
                 <div class="tt fl">自提</div>
                 <div class="weui_cell_ft fr">
                     <input class="weui_switch" type="checkbox" v-on:change="ztshow">

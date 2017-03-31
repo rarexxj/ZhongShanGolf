@@ -10,20 +10,19 @@
 }
 
 .order-info .status p {
-    font-size: 0.32rem;
+    font-size: 0.26rem;
     line-height: 0.48rem;
-    color: #3d3d45;
-    margin-bottom: 0.1rem;
+    color: #333;
 }
 
 .order-info .status .time {
-    color: #c0a85f;
+    color: #e84608;
 }
 .c0a85f{
-    color: #c0a85f;
+    color: #e84608;
 }
 .zhus{
-    color: #c0a85f;
+    color: #e84608;
 }
 .order-info .status .btns {
     margin-top: 0.44rem;
@@ -47,13 +46,15 @@
 }
 
 .order-info .status .btns .bigbtn {
-    height: 1.14rem;
-    color: #3d3d45;
-    background-color: #eaeaea;
+    width: 100%;
+    height: 0.86rem;
+    border: 1px solid #78a000;
+    color: #78a000;
     text-align: center;
     font-size: 0.36rem;
-    border-radius: 6px;
-    line-height:1.14rem;
+    border-radius: 0.08rem;
+    box-sizing: border-box;
+    line-height: 0.86rem;
     display: block;
 }
 
@@ -74,22 +75,22 @@
 }
 
 .order-info .choadd .name {
-    min-width: 2rem;
+    width: 2.78rem;
     line-height: 0.69rem;
-    color: #333333;
-    font-size: 0.34rem;
+    color: #444;
+    font-size: 0.26rem;
 }
 
 .order-info .choadd .tel {
     line-height: 0.69rem;
-    color: #333;
-    font-size: 0.34rem;
+    color: #444;
+    font-size: 0.24rem;
 }
 
 .order-info .choadd .add {
-    font-size: 0.28rem;
+    font-size: 0.24rem;
     line-height: 0.35rem;
-    color: #8a8a8a;
+    color: #666;
 }
 
 .order-info .pro-style {
@@ -116,7 +117,7 @@
 .order-info .line .price {
     font-size: 0.3rem;
     line-height: 0.86rem;
-    color: #c0a85f;
+    color:#e84608;
     font-family: 'Arial';
     float: right;
 }
@@ -139,24 +140,24 @@
 }
 
 .order-info .paymoney {
-    padding: 0.16rem 0.15rem;
+    padding: 0.16rem 0.3rem;
     background: #fff;
     text-align: right;
 }
 
 .order-info .paymoney .sum {
-    font-size: 0.32rem;
-    color: #3d3d45;
+    font-size: 0.24rem;
+    color: #333;
     line-height: 0.62rem;
 }
 
 .order-info .paymoney .sum span {
     font-size: 0.32rem;
-    color: #c3ab66;
+    color: #e84608;
 }
 
 .order-info .paymoney .time {
-    font-size: 0.26rem;
+    font-size: 0.24rem;
     line-height: 0.5rem;
     color: #999999;
 }
@@ -209,8 +210,8 @@
 }
 
 .pro-style .img {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.33rem;
+    height: 1.33rem;
     border: 0.01rem solid #e8e8e8;
     background-size: cover;
     background-position: center;
@@ -229,11 +230,9 @@
     overflow: hidden;
 }
 .pro-style .shux {
-    font-size: 0.26rem;
-    line-height: 0.36rem;
-    color: #999;
-    height: 0.72rem;
-    overflow: hidden;
+    font-size: 0.24rem;
+    line-height: 0.24rem;
+    color: #999999;
 }
 .pro-style .color {
     font-size: 0.24rem;
@@ -248,7 +247,6 @@
 }
 
 .pro-style .num {
-    width: 1.45rem;
     text-align: right;
     font-size: 0.24rem;
     line-height: 0.24rem;
@@ -257,14 +255,13 @@
 .pro-style .num .price {
     color: #333;
     margin-top: 0.1rem;
-    color: #c0a85f;
-    font-size: 0.3rem;
+    font-size: 0.24rem;
 }
 
 .pro-style .num .number {
     margin-top: 0.42rem;
     color: #333333;
-    font-size: 0.3rem;
+    font-size: 0.24rem;
 }
 
 .back {

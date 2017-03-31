@@ -29,22 +29,20 @@ $(function () {
                     if (rs.returnCode == '200') {
                         _this.info = rs.data;
                         _this.time = rs.data.CreateTime.toString().replace(/-/g, "/");
-                        ;
                         _this.id=rs.data.Id;
                         _this.money=rs.data.PayFee;
                         console.log(_this.time);
                         _this.$nextTick(function () {
                             if (rs.data.OrderStatus == 0) {
                                 _this.countDown(_this.time, '.deadline');
-                                _this.countDown1()
                             }
                         })
-                        var a = [];
-                        for (i = 0; i < rs.data.OrderGoods.length; i++) {
-                            a.push(rs.data.OrderGoods[i].GoodsImage.Id);
-                        }
-                        b=a.join('|');
-                        _this.filesid=b;
+                        // var a = [];
+                        // for (i = 0; i < rs.data.OrderGoods.length; i++) {
+                        //     a.push(rs.data.OrderGoods[i].GoodsImage.Id);
+                        // }
+                        // b=a.join('|');
+                        // _this.filesid=b;
                         $.RMLOAD();
 
                         //计算剩余确认收货时间
@@ -52,7 +50,7 @@ $(function () {
                             var str = rs.data.ShippingTime.split(' ');
                             str = str.toString().replace(/-/g, "/");
                             var date = new Date(str);
-                            var deadline = date.getTime() + 10 * 24 * 60 * 60 * 1000;
+                            var deadline = date.getTime() + 7 * 24 * 60 * 60 * 1000;
                             var mytime = new Date()
                             var nowtime = mytime.getTime();
                             var last = (deadline - nowtime) / 1000;
@@ -82,14 +80,14 @@ $(function () {
                     _this.deletajax();
                 })
 
-                $('#main').on('click', '.back', function () {
-                    _this.tuikclick();
-                })
+                // $('#main').on('click', '.back', function () {
+                //     _this.tuikclick();
+                // })
             },
-            tuikclick: function () {
-                var _this=this;
-                window.location.href='/Html/html/personalcenter/tuiktype.html?oid='+_this.id+'&mp='+_this.money+'&filesid='+_this.filesid
-            },
+            // tuikclick: function () {
+            //     var _this=this;
+            //     window.location.href='/Html/html/personalcenter/tuiktype.html?oid='+_this.id+'&mp='+_this.money+'&filesid='+_this.filesid
+            // },
             cancleajax: function () {
                 $.ajax({
                     url: '/Api/v1/Order/' + id + '/Cancel',
