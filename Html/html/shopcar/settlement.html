@@ -87,21 +87,20 @@
                 <div class="tt fl">商品金额</div>
                 <div class="price fr">¥<span class="amo">{{info.GoodsAmount.toFixed(2)}}</span></div>
             </div>
-            <div class="line" style="margin-top: 0.2rem">
-                <!--<div class="tt fl">可用积分{{AvailableIntegral}}分，可抵扣{{(AvailableIntegral/1000).toFixed(2)}}元</div>-->
+            <div class="line" style="margin-top: 0.2rem" v-if="info.takeTheir">
                 <div class="tt fl">自提</div>
                 <div class="weui_cell_ft fr">
-                    <input class="weui_switch" type="checkbox" onchange="js()">
+                    <input class="weui_switch" type="checkbox" v-on:change="ztshow">
                 </div>
             </div>
-            <div>
+            <div v-show="ztbtn">
                 <div class="line zt-address">
                     <div class="tt fl">地址</div>
-                    <div class="price fr">¥<span class="amo">{{info.GoodsAmount.toFixed(2)}}</span></div>
+                    <div class="zt-address fr"><span class="amo">{{ztinfo.SinceAddress}}</span></div>
                 </div>
                 <div class="line zt-tel">
                     <div class="tt fl">电话</div>
-                    <div class="price fr">¥<span class="amo">{{info.GoodsAmount.toFixed(2)}}</span></div>
+                    <div class="zt-tel fr"><span class="amo">{{ztinfo.SincePhone}}</span></div>
                 </div>
             </div>
             <div class="line postage" :data-postage="info.ShippingFee">
@@ -109,27 +108,16 @@
                 <div class="price fr shipprice" :data-price="ShippingFee">¥<span
                         class="amo">{{info.ShippingFee.toFixed(2)}}</span></div>
             </div>
-            <!--<div class="line jifen" style="margin-top: 0.2rem">-->
-                <!--&lt;!&ndash;<div class="tt fl">可用积分{{AvailableIntegral}}分，可抵扣{{(AvailableIntegral/1000).toFixed(2)}}元</div>&ndash;&gt;-->
-                <!--<div class="tt fl">-->
-                    <!--有{{info.AvailableIntegral}}分，可抵{{(info.AvailableIntegral/100*info.IntegralDiscountRate).toFixed(2)}}元-->
-                <!--</div>-->
-
-                <!--<div class="weui_cell_ft fr">-->
-                    <!--<input class="weui_switch" type="checkbox" :data-int="info.AvailableIntegral"-->
-                           <!--:data-money="info.AvailableIntegral/100*info.IntegralDiscountRate" v-on:change="js() ">-->
-                <!--</div>-->
-            <!--</div>-->
             <div class="line">
                 <label for="shuoming" class="tt w145">订单备注：</label>
                 <input type="text" class="text fl  bz" maxlength="50" placeholder="选填，给买家留言（限50字）" name="shuoming" id="shuoming">
             </div>
         </div>
-        <div class="car-list">
-            <div class="hj">
-                合计：<span class="price">¥ <span class="amo" :data-price1="info.allprice" :data-price2="info.GoodsAmount">{{info.GoodsAmount.toFixed(2)}}</span></span>
+        <div class="car-list clearfix">
+            <div class="hj fl">
+                合计：<span class="price">¥ <span class="amo" :data-price1="info.allprice" :data-price2="info.GoodsAmount">{{allprice}}</span></span>
             </div>
-            <div class="balance">确认订单</div>
+            <div class="balance fr">确认订单</div>
         </div>
     </div>
     <!--<div class="timebox">-->

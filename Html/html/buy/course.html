@@ -32,13 +32,13 @@
             </div>
         </div>
         <div class="mainbox" v-for="list in proinfo.Goods">
-            <div class="main clearfix">
+            <a class="main clearfix" :href="'/Html/html/buy/productsinfo.html?id='+list.Id">
                 <div class="pro-img fl" :style="{backgroundImage:'url('+list.MainImage.RelativePath+')'}"></div>
                 <div class="pro-int fl">
                     <span class="pro-int-title">{{list.Name}}</span>
                     <span class="pro-int-int">{{list.Introduction}}</span>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="nothing" v-if="proinfo.TotalCount==0">
             <div class="tb"></div>

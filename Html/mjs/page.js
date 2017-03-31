@@ -14,8 +14,9 @@ $(function () {
             infoajax: function () {
                 var _this=this;
                 $.ajax({
-                    url: "/Api/v1/Page/" +  0,
-                    type: "get"
+                    url: '/Api/v1/Page/' + '04',
+                    type:'get',
+                    dataType:'json'
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
                         _this.info = rs.data;

@@ -32,15 +32,14 @@
             </div>
         </div>
         <div class="mainbox">
-            <div class="main clearfix" v-for="list in proinfo.Goods">
+            <a class="main clearfix" v-for="list in proinfo.Goods" :href="'/Html/html/buy/productsinfo.html?id='+list.Id">
                 <div class="pro-img fl" :style="{backgroundImage:'url('+list.MainImage.RelativePath+')'}"></div>
                 <div class="pro-int fl">
                     <ul>{{list.Name}}
-                        <li>有效期1年,1记名使用；</li>
-                        <li>有效期内免费联系,无限畅打；</li>
+                        <li>{{list.Introduction}}</li>
                     </ul>
                 </div>
-            </div>
+            </a>
             <div class="scroll" style="width: 100%;height:0.01rem;"></div>
         </div>
         <div class="nothing" v-if="proinfo.TotalCount==0">

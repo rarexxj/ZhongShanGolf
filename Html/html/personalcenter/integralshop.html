@@ -27,8 +27,8 @@
         <div class="img fl"><img v-if="info.Avatar" :src="info.Avatar.RelativePath" width="100%" height="100%"
                                  alt=""><img v-else="" src="/Html/css/img/img08.jpg" width="100%" height="100%" alt="">
         </div>
-        <div class="name fl">{{info.NickName}}撒旦打算大</div>
-        <div class="jf fr">123213<span>积分</span></div>
+        <div class="name fl">{{info.NickName}}</div>
+        <div class="jf fr">{{ininfo.Integral}}<span>积分</span></div>
     </div>
     <div class="list f-cb clearfix">
         <a href="/Html/html/personalcenter/integralmx.html" class="pay">
@@ -43,16 +43,14 @@
     </div>
     <div>
         <div class="mainbox">
-            <div class="main clearfix">
-                <div class="pro-img fl" style="{backgrounImage:'url('')'}"></div>
+            <a class="main clearfix" :href="'/Html/html/buy/integralproinfo.html?id='+list.Id" v-for="list in listinfo.Goods">
+                <div class="pro-img fl" :style="{backgroundImage:'url('+list.MainImage.RelativePath+')'}"></div>
                 <div class="pro-int fl">
-                    <div class="pro-int-name">Titleist高尔夫球</div>
-                    <div class="pro-int-int">男士PERCY高尔夫外套修身秋
-                        冬夹克16新款
-                    </div>
-                    <div class="pro-int-logo">2624<span class="pro-int-price ">积分</span></div>
+                    <div class="pro-int-name">{{list.Name}}</div>
+                    <div class="pro-int-int">{{list.Introduction}}</div>
+                    <div class="pro-int-logo">{{list.ShopPrice}}<span class="pro-int-price ">积分</span></div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="scroll" style="width: 100%;height: 0.01rem;"></div>
     </div>

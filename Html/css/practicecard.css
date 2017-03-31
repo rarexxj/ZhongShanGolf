@@ -170,6 +170,7 @@
     border-top: 0.01rem solid #eeeeee;
     border-bottom: 0.01rem solid #eeeeee;
     position: relative;
+    display: block;
 }
 .pro-img{
     width:1.8rem;

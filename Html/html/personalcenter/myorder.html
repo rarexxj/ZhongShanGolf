@@ -22,7 +22,7 @@
     <script src="/Html/public/js/main.js"></script>
 
 </head>
-<body style="">
+<body style="background-color: #f7f7f7;">
 <div class="my-order" id="main" v-cloak="">
     <div>
         <div class="ordernavbox swiper-container">
@@ -87,9 +87,9 @@
                         <div class="btn remind-btn"
                              v-if="list.OrderStatus==1&&list.ShippingStatus==0&&list.RefundStatus==0">提醒发货
                         </div>
-                        <a :href="'/Html/html/personalcenter/comment.html?id='+list.Id" class="btn cur" v-if="list.EvaluateStatus==0 && list.OrderStatus==3 &&list.RefundStatus==0">评价</a>
-                        <a :href="'/Html/html/personalcenter/checkcomment.html?id='+list.Id" class="btn cur"
-                           v-if="(list.EvaluateStatus==1||list.EvaluateStatus==2) && list.OrderStatus==3">查看评价</a>
+                        <!--<a :href="'/Html/html/personalcenter/comment.html?id='+list.Id" class="btn cur" v-if="list.EvaluateStatus==0 && list.OrderStatus==3 &&list.RefundStatus==0">评价</a>-->
+                        <!--<a :href="'/Html/html/personalcenter/checkcomment.html?id='+list.Id" class="btn cur"-->
+                           <!--v-if="(list.EvaluateStatus==1||list.EvaluateStatus==2) && list.OrderStatus==3">查看评价</a>-->
                         <a :href="'http://m.kuaidi100.com/index_all.html?type='+list.ShippingCode+'&postid='+list.ShippingNo+'&callbackurl='+URL+'/Html/html/personalcenter/myorder.html?orderType=0'"
                            class="btn"
                            v-if="list.ShippingStatus==1">

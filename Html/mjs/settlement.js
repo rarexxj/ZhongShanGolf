@@ -17,21 +17,24 @@ $(function () {
     if (addid) {
         ids.AddressId = addid
     }
+    ids.IsFromCart = false;
     console.log(ids);
     new Vue({
         el: '#main',
         data: {
             info: [],
-            data1: ids
+            data1: ids,
+            ztinfo: [],
+            ztbtn: false,
+            allprice: ''
         },
         ready: function () {
             var _this = this;
             _this.ajax();
             _this.$nextTick(function () {
+                _this.ztaddress();
                 _this.link();
-                _this.js();
                 _this.prosubmit();
-                _this.getsettime();
                 // $.RMLOAD();
             })
         },
@@ -40,18 +43,15 @@ $(function () {
                 var _this = this;
                 console.log(_this.data1)
                 $.ajax({
-                    url: "/Api/v1/Mall/OrderCalculation",
+                    url: '/Api/v1/Mall/OrderCalculation',
                     data: _this.data1,
                     type: 'post'
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
                         _this.info = rs.data;
-                        _this.price();
-                        //计算总价
-                        rs.data.allprice = parseFloat(rs.data.GoodsAmount + rs.data.ShippingFee)
+                        _this.allprice = Number(rs.data.GoodsAmount)+Number(rs.data.ShippingFee);
+                        _this.allprice = _this.allprice.toFixed(2);
                         $.RMLOAD();
-
-
                     }
                 })
             },
@@ -61,11 +61,6 @@ $(function () {
                     window.location.href = "/Html/html/shopcar/chooseaddress.html?gid=" + gid
                 })
 
-            },
-            //价格计算
-            price: function () {
-                var _this = this;
-                $('.need').html((_this.info.GoodsAmount) - (_this.info.GoodsDeposit));
             },
             //提交订单
             prosubmit: function () {
@@ -96,12 +91,10 @@ $(function () {
                             Street: _this.info.Addresses.Street,
                             Address: _this.info.Addresses.Address,
                             Tel: _this.info.Addresses.Phone,
+                            Integral: '',
                             Memo: $('.bz').val(),
-                            Goods: prodata,
-                            CouponId: $('.youhq.active').attr('data-id') ? $('.youhq.active').attr('data-id') : null,
-                            GoodId: jjid,
-                            BestTime: $('.peit').val(),
-                            OptionalGoodsId: a
+                            TakeTheir: _this.ztbtn,
+                            Goods: prodata
                         }
                         console.log(message)
                         _this.inputajax(message);
@@ -109,74 +102,36 @@ $(function () {
                 })
             },
             inputajax: function (message) {
+                var _this=this;
                 $.ajax({
-                    url: '/Api/v1/Mall/OrderSubmit',
+                     url:'/Api/v1/Mall/Order',
                     data: message,
                     type: 'post'
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
-                        if ($('.car-list .amo').attr('data-price') == 0) {
-                            window.location.replace("/Html/Member/PersonalCenter.html")
-                        } else {
-                            window.location.replace("/Html/html/shopcar/pay.html?id=" + rs.data.Id + '&OrderNo=' + rs.data.OrderNo + '&money=' + $('.car-list').find('.amo').attr('data-price') + '&time=' + rs.data.CreateTime + '&yhq=' + $('#yhq').attr('data-price'))
-                        }
+                        window.location.replace("/Html/html/shopcar/pay.html?id=" + rs.data.Id + '&OrderNo=' + rs.data.OrderNo + '&money=' + _this.allprice+ '&time=' + rs.data.CreateTime + '&taketheir='+rs.data.TakeTheir)
                     }
                 })
             },
-            js: function () {
+            ztshow: function () {
                 var _this = this;
-                var n = $('.weui_switch').attr('data-money')
                 if ($('.weui_switch').is(':checked')) {
-                    $('.weui_switch').attr('data-price', n)
+                    _this.ztbtn = true;
                 } else {
-                    $('.weui_switch').attr('data-price', 0)
+                    _this.ztbtn = false;
                 }
-                _this.getLastPrice();
             },
-            getLastPrice: function () {
+            ztaddress: function () {
                 var _this = this;
-                // var money = parseFloat($('.car-list .amo').attr('data-price2') - $('.weui_switch').attr('data-price') - $('#yhq').attr('data-price'));
-                var money = parseFloat($('.car-list .amo').attr('data-price2') - $('#yhq').attr('data-price') + _this.zxprice);
-                console.log(_this.zxprice)
-                if (money < 0) {
-                    money = 0
-                }
-                money = parseFloat(Number(money) + Number($('.postage').attr('data-postage'))).toFixed(2);
-                $('.car-list .amo').attr('data-price', money);
-                var price = $('.car-list').find('.amo').attr('data-price');
-                $('.car-list').find('.amo').html(price)
-            },
-            getsettime: function () {
-                // $('.settime').on('click', function () {
-                //     $('.confirm-order').hide();
-                //     $('.timebox').show();
-                // })
-                // $('.time-btn').on('click', function () {
-                //     $('.confirm-order').show();
-                //     $('.timebox').hide();
-                // })
-
-                var currYear = (new Date()).getFullYear();
-                var opt = {};
-                opt.date = {preset: 'date'};
-                opt.datetime = {preset: 'datetime'};
-                opt.time = {preset: 'time'};
-                opt.default = {
-                    theme: 'android-ics light', //皮肤样式
-                    display: 'modal', //显示方式
-                    mode: 'scroller', //日期选择模式
-                    dateFormat: 'yyyy-mm-dd',
-                    lang: 'zh',
-                    showNow: true,
-                    nowText: "今天",
-                    // startYear: currYear, //开始年份
-                    endYear: currYear + 10, //结束年份
-                    minDate: new Date(),
-                    stepMinute: 15
-                };
-                var optDateTime = $.extend(opt['datetime'], opt['default']);
-                $("#peistime").mobiscroll(optDateTime).datetime(optDateTime);
-
+                $.ajax({
+                    url: '/Api/v1/WebsConfiguration',
+                    type: 'get',
+                    dataType: 'json'
+                }).done(function (rs) {
+                    if (rs.returnCode == '200') {
+                        _this.ztinfo = rs.data;
+                    }
+                })
             }
         }
     })
