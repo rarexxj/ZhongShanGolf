@@ -88,6 +88,7 @@ $(function () {
                             City: _this.info.Addresses.City,
                             District: _this.info.Addresses.District,
                             Street: _this.info.Addresses.Street,
+                            RegionName:_this.info.Addresses.RegionName,
                             Address: _this.info.Addresses.Address,
                             Tel: _this.info.Addresses.Phone,
                             Integral: '',
@@ -108,7 +109,7 @@ $(function () {
                     type: 'post'
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
-                        window.location.replace("/Html/html/shopcar/pay.html?id=" + rs.data.Id + '&OrderNo=' + rs.data.OrderNo + '&money=' + _this.allprice+ '&time=' + rs.data.CreateTime + '&taketheir='+rs.data.TakeTheir)
+                        window.location.replace("/Html/html/shopcar/integralpay.html?id=" + rs.data.Id + '&OrderNo=' + rs.data.OrderNo + '&money=' + _this.allprice+ '&time=' + rs.data.CreateTime + '&taketheir='+rs.data.TakeTheir)
                     }
                 })
             },

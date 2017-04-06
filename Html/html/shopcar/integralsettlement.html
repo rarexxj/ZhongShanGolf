@@ -72,6 +72,22 @@
                     <div class="allnum fr">共{{info.Goods.TotalQuantity}}件</div>
                 </div>
             </div>
+            <div class="line" style="margin-top: 0.2rem" v-if="info.takeTheir">
+                <div class="tt fl">自提</div>
+                <div class="weui_cell_ft fr">
+                    <input class="weui_switch" type="checkbox" v-on:change="ztshow">
+                </div>
+            </div>
+            <div v-show="ztbtn">
+                <div class="line zt-address">
+                    <div class="tt fl">地址</div>
+                    <div class="zt-address fr"><span class="amo">{{ztinfo.SinceAddress}}</span></div>
+                </div>
+                <div class="line zt-tel">
+                    <div class="tt fl">电话</div>
+                    <div class="zt-tel fr"><span class="amo">{{ztinfo.SincePhone}}</span></div>
+                </div>
+            </div>
             <div class="line postage" :data-postage="info.ShippingFee">
                 <div class="tt fl">邮费</div>
                 <div class="price fr shipprice" :data-price="ShippingFee">¥<span

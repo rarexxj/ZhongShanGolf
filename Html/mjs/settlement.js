@@ -89,6 +89,7 @@ $(function () {
                             City: _this.info.Addresses.City,
                             District: _this.info.Addresses.District,
                             Street: _this.info.Addresses.Street,
+                            RegionName:_this.info.Addresses.RegionName,
                             Address: _this.info.Addresses.Address,
                             Tel: _this.info.Addresses.Phone,
                             Integral: '',

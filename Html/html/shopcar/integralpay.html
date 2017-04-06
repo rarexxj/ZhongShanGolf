@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="content-language" content="zh-CN"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="author" content="杭州博采网络科技股份有限公司-高端网站建设-http://www.bocweb.cn"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>辛普森传承会</title>
+    <script src="/Html/public/js/jQuery.js"></script>
+    <script src="/Html/public/js/vue.js"></script>
+    <script src="/Html/public/js/main.js"></script>
+    <link rel="stylesheet" href="/Html/public/css/reset.css">
+    <link rel="stylesheet" href="/Html/public/css/main.css">
+    <link rel="stylesheet" href="/Html/css/integralpay.css">
+</head>
+<body style="background-color: #f7f7f7">
+<div class="main">
+    <div class="shoppay" id="pay_mon" v-cloak="">
+        <div class="deadline">剩余付款时间：<span class="min">59</span>分<span class="sec">59</span>秒</div>
+        <div class="line" style="margin-top: 0.2rem">
+            <div class="tt fl">订单编号</div>
+            <div class="num fr orderno">{{OrderNo}}</div>
+        </div>
+        <div class="line bb">
+            <div class="tt fl">实付金额</div>
+            <div class="price fr npri"><span class="amo"><i class="shifu">{{zongji}}</i>积分</span></div>
+        </div>
+        <span id="subimitButton" class="bot-btn">立即支付</span>
+    </div>
+    <div class="mask">
+        <div class="paybox">
+            <div class="img"></div>
+            <div class="tips">
+                如果要用支付宝支付 <br>
+                请点击右上角的... <br>
+                在浏览器中打开后重新选择
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/Html/mjs/integralpay.js"></script>
+
+</body>
+</html>

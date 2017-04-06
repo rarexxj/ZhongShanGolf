@@ -7,13 +7,15 @@ $(function () {
         el: '#myinfo',
         data: {
             info: [],
-            btn: true
+            btn: true,
+            imgid: '',
+            vipid: ''
         },
         ready: function () {
             var _this = this;
             _this.infoajax();
             _this.$nextTick(function () {
-                // _this.Portrait();
+                _this.Portrait();
                 _this.exit();
                 _this.hideexit();
             })
@@ -27,50 +29,62 @@ $(function () {
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
                         _this.info = rs.data;
+                        _this.vipid = rs.data.Id;
                         $.RMLOAD()
 
                     }
                 })
             },
-            //上传头像
-            // Portrait: function () {
-            //     $('.head .file').on('change', function () {
-            //         $.ADDLOAD();
-            //         var imgData = {};
-            //         var file = $(this)[0].files[0];
-            //         //判断类型是不是图片
-            //         if (!/image\/\w+/.test(file.type)) {
-            //             //toolTips(0, "请确保文件为图像类型", 1);
-            //             $.oppo('请确保文件为图像类型', 1)
-            //             return false;
-            //         }
-            //         var reader = new FileReader();
-            //         reader.readAsDataURL(file);
-            //         reader.onload = function (e) {
-            //             imgData['fileName'] = file.name;
-            //             imgData['data'] = this.result; //就是base64
-            //             //console.log(imgData);
-            //             $.ajax({
-            //                 //contentType: false,    //不可缺
-            //                 //processData: false,    //不可缺
-            //                 url: '/Api/v1/Member/' + $.get_user('Id') + '/Avatar',
-            //                 data: imgData,
-            //                 type: 'Patch'
-            //             }).done(function (json) {
-            //                 if (json.returnCode == 200) {
-            //                     var data = json.data;
-            //                     // localStorage['qy_head'] = $.get_user('Id') + "|" + data.SmallThumbnail
-            //                     $('.head img').attr('src', data.SmallThumbnail);
-            //                     $.oppo('修改成功！', 1)
-            //                     $.RMLOAD();
-            //                 } else {
-            //                     $.oppo(json.msg, 1);
-            //                     $.RMLOAD();
-            //                 }
-            //             })
-            //         }
-            //     })
-            // },
+            // 上传头像
+            Portrait: function () {
+                var _this = this;
+                //			图片上传
+                $(".file").on("change", function () {
+                    $.ajax({
+                        url: $("#img_data").attr('action'),
+                        dataType: "json",
+                        type: "POST",
+                        data: new FormData($('#img_data')[0]),
+                        processData: false,
+                        cache: false,
+                        contentType: false,
+                        success: function (rs) {
+                            if (rs.returnCode == '200') {
+                                _this.imgid = rs.data[0].Id;
+                                var src = rs.data[0].RelativePath;
+                                $('.head img').attr('src', src);
+                                _this.fiximg();
+
+                            } else {
+
+                                $.oppo(rs.msg);
+                            }
+                            console.log(rs)
+
+                        },
+                        error: function (xh, yh, error) {
+                            $.oppo(error);
+                        }
+                    });
+
+                })
+
+            },
+            //修改头像
+            fiximg: function () {
+                var _this = this;
+                $.ajax({
+                    url: '/Api/v1/Member/' + _this.vipid + '/Avatar',
+                    type: 'PATCH',
+                    data: {
+                        avatarId: _this.imgid
+                    }
+                }).done(function (rs) {
+                    if (rs.returnCode == '200') {
+                    }
+                })
+            },
+            //退出
             exit: function () {
                 var _this = this;
                 $('.submit').on('click', function () {
