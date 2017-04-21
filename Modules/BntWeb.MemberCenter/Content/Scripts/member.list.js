@@ -13,7 +13,7 @@
     var goodsTable = $('#MembersTable').dataTable({
         "processing": true,
         "serverSide": true,
-        "sorting": [[6, "desc"]],
+        "sorting": [[0, "desc"]],
         "ajax": {
             "url": url_loadPage,
             "data": function (d) {

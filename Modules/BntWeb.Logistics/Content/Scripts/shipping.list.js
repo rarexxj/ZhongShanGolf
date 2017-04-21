@@ -18,6 +18,7 @@
         [
              { "mData": "Name", 'sClass': 'left', "orderable": false },
               { "mData": "Description", 'sClass': 'left', "orderable": false },
+                { "mData": "Code", 'sClass': 'left', "orderable": false },
             {
                 "mData": "IsDefault", 'sClass': 'left', "orderable": false,
                 "mRender": function (data, type, full) {
@@ -58,6 +59,7 @@
                 "orderable": false,
                 "mRender": function (data, type, full) {
                     var render = '<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">';
+                    render += '<a class="blue" href="' + url_EditShipping + '?id=' + full.Id + '" title="编辑"><i class="icon-pencil bigger-130"></i></a>';
                     if (full.Status == 1) {
                         render += '<a class="red switch" data-id="' + full.Id + '" data-value="off" href="#" title="禁用"><i class="icon-circle bigger-130"></i></a>';
                         if (!full.IsDefault)
@@ -66,7 +68,7 @@
                     else if (full.Status == 0) {
                         render += '<a class="green switch" data-id="' + full.Id + '" data-value="on" href="#" title="启用"><i class="icon-circle-blank bigger-130"></i></a>';
                     }
-                   
+                    render += '<a class="red delete" data-id="' + full.Id + '" href="#" title="删除"><i class="icon-trash bigger-130"></i></a>';
                     render += '</div>';
                     return render;
                 }
@@ -101,4 +103,19 @@
             }
         });
     });
+
+    $('#ShippingsTable').on("click", ".delete", function (e) {
+        var id = $(this).data("id");
+
+        bntToolkit.confirm("删除后不可恢复，确定还要删除该配送方式吗？", function () {
+            bntToolkit.post(url_DeleteShipping, { Id: id }, function (result) {
+                if (result.Success) {
+                    $("#ShippingsTable").dataTable().fnDraw();
+                } else {
+                    bntToolkit.error(result.ErrorMessage);
+                }
+            });
+        });
+    });
+
 });

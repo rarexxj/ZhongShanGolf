@@ -32,15 +32,15 @@
                     return "<a href=\"#\">" + data + "</a>";
                 }
             },
-            {
-                "mData": "ActivityType", 'sClass': 'left', "orderable": false,
-                "mRender": function (data, type, full) {
-                    if (data != null) {
-                        return data.TypeName;
-                    }
-                    return "官方认证";
-                }
-            },
+            ////{
+            ////    "mData": "ActivityType", 'sClass': 'left', "orderable": false,
+            ////    "mRender": function (data, type, full) {
+            ////        if (data != null) {
+            ////            return data.TypeName;
+            ////        }
+            ////        return "官方认证";
+            ////    }
+            ////},
             {
                 "mData": "StartTime", 'sClass': 'left',
                 "sWidth": "250px",

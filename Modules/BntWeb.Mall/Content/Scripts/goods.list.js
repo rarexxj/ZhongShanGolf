@@ -14,7 +14,7 @@
                 d.extra_search = { "Name": name, "Status": status, "GoodsNo": goodsNo, "CategoryId": categoryId };
             }
         },
-        "sorting": [[2, "desc"]],
+        "sorting": [[6, "desc"]],
         "aoColumns":
 		[
 		    {
@@ -38,7 +38,7 @@
                         }
                     },
 			{ "mData": "Name", 'sClass': 'left' },
-			{ "mData": "GoodsNo", 'sClass': 'left' },
+			//{ "mData": "GoodsNo", 'sClass': 'left' },
 			{ "mData": "ShopPrice", 'sClass': 'left' },
 			{
 			    "mData": "Status", 'sClass': 'center',

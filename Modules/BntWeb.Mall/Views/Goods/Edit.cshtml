@@ -73,22 +73,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="space-4"></div>
+                                @*<div class="space-4"></div>
                                 <div class="form-group">
                                     <label class="col-sm-1 control-label no-padding-right" for="GoodsNo"> 货号 </label>
                                     <div class="col-sm-9">
                                         <div class="clearfix">
-                                            <input type="text" id="GoodsNo" name="GoodsNo" placeholder="货号" class="col-xs-5 col-sm-3" value="@Model.GoodsNo"/>
+                                            <input type="text" id="GoodsNo" name="GoodsNo" placeholder="货号" class="col-xs-5 col-sm-3" value="@Model.GoodsNo" />
                                         </div>
                                     </div>
-                                </div>
+                                </div>*@
 
                                 <div class="space-4"></div>
                                 <div class="form-group">
                                     <label class="col-sm-1 control-label no-padding-right" for="Introduction"> 简介 </label>
                                     <div class="col-sm-9">
                                         <div class="clearfix">
-                                            <input type="text" id="Introduction" name="Introduction" placeholder="简介" class="col-xs-5 col-sm-3" value="@Model.Introduction" />
+                                            <textarea id="Introduction" name="Introduction" placeholder="简介,最多60字"maxlength="60" style="height: 200px; width: 40%" class="col-xs-10 col-sm-12">@Model.Introduction</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -128,21 +128,22 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!--包邮设置-->
-                                <div class="space-4"></div>
-                                <div class="form-group">
-                                    <label class="col-sm-1 control-label no-padding-right" for="FreeShipping"> 包邮 </label>
-                                    <div class="col-sm-9">
-                                        <div class="clearfix">
-                                            <label class="inline" style="margin-right: 30px; cursor: pointer">
-                                                <input type="checkbox" id="FreeShipping" name="FreeShipping" class="ace" value="true" @(Model.FreeShipping ? "checked='checked'" : "")/>
-                                                <span class="lbl"></span>
-                                            </label>
+                                @if (Model.MallType != MallType.IntegralMall)
+                                {
+                                    <!--包邮设置-->
+                                    <div class="space-4"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-1 control-label no-padding-right" for="FreeShipping"> 包邮 </label>
+                                        <div class="col-sm-9">
+                                            <div class="clearfix">
+                                                <label class="inline" style="margin-right: 30px; cursor: pointer">
+                                                    <input type="checkbox" id="FreeShipping" name="FreeShipping" class="ace" value="true" @(Model.FreeShipping ? "checked='checked'" : "") />
+                                                    <span class="lbl"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
+                                }
                                 <div class="space-4"></div>
                                 <div class="form-group">
                                     <label class="col-sm-1 control-label no-padding-right" for="TakeTheir"> 自提 </label>
@@ -156,7 +157,7 @@
                                     </div>
                                 </div>
 
-  
+
                             </div>
                         </div>
                         <div id="description" class="tab-pane">
@@ -268,9 +269,9 @@
                 保存
             </button>
             @*<button id="GrouponButton" class="btn @(Model.IsGroupon ? (ViewBag.ToGrouponSeconds > 0 ? "btn-warning" : "btn-danger") : "btn-default")" type="button" value="@(Model.IsGroupon ? (Model.GrouponEndTime > DateTime.Now ? 1 : 0) : 0)">
-            <i class="@(Model.IsGroupon ? "icon-group" : "icon-user") bigger-110"></i>
-            加入团购
-            </button>*@
+                <i class="@(Model.IsGroupon ? "icon-group" : "icon-user") bigger-110"></i>
+                加入团购
+                </button>*@
         </div>
     </div>
 </form>

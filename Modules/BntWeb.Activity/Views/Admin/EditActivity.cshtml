@@ -52,7 +52,7 @@
         <div class="col-sm-9">
             <span class="input-icon">
                 <input type="text" id="StartTime" name="StartTime" placeholder="开始时间" style="width:300px;" @(editMode ? "" : "readonly=true") value="@(Model.StartTime == null ? "" : Model.StartTime.ToString("yyyy-MM-dd HH:mm:ss"))" />
-                <i class="icon-calendar light-orange"></i>
+        
             </span>
         </div>
     </div>
@@ -62,7 +62,7 @@
         <div class="col-sm-9">
             <span class="input-icon">
                 <input type="text" id="EndTime" name="EndTime" placeholder="结束时间" style="width: 300px;" @(editMode ? "" : "readonly=true") value="@(Model.EndTime == null ? "" : Model.EndTime.ToString("yyyy-MM-dd HH:mm:ss"))" />
-                <i class="icon-calendar light-orange"></i>
+
             </span>
         </div>
     </div>
@@ -73,7 +73,7 @@
         <div class="col-sm-9">
             <span class="input-icon">
                 <input type="text" id="ApplyEndTime" name="ApplyEndTime" placeholder="报名截止时间" style="width: 300px;" @(editMode ? "" : "readonly=true") value="@(Model.ApplyEndTime == null ? "" : Model.ApplyEndTime.ToString("yyyy-MM-dd HH:mm:ss"))" />
-                <i class="icon-calendar light-orange"></i>
+  
             </span>
         </div>
     </div>
@@ -93,7 +93,7 @@
         <label class="col-sm-1 control-label no-padding-right" for="Description"> 活动介绍 </label>
         <div class="col-sm-9">
             <div class="clearfix">
-                <textarea id="Description" name="Description" placeholder="请填写相关活动介绍，200字以内" maxlength="200" style="height: 120px;" class="col-xs-10 col-sm-5" @(editMode ? "" : "readonly=true")>@Model.Description</textarea>
+                <textarea id="Description" name="Description" placeholder="请填写相关活动介绍"  style="height: 400px; width: 40%" class="col-xs-10 col-sm-5" @(editMode ? "" : "readonly=true")>@Model.Description</textarea>
             </div>
         </div>
     </div>
@@ -120,7 +120,10 @@
     }
 </form>
 @section Scripts {
+    @Scripts.Render("~/js/ztree")
+    @Scripts.Render("~/js/admin/editable")
     @Scripts.Render("~/js/admin/jquery-form")
+    @Scripts.Render("~/js/kindeditor")
     <script type="text/javascript">
         var editMode = @editMode.ToString().ToLower();
         jQuery(function($) {
@@ -128,7 +131,7 @@
                 var options = $.datepicker.regional["zh-CN"];
                 options["dateFormat"] = "yy-mm-dd";
                 $("#StartTime").datetimepicker(options);
-                $("#EndTime").datetimepicker(options); 
+                $("#EndTime").datetimepicker(options);
                 $("#ApplyEndTime").datetimepicker(options);
             }
 
@@ -152,7 +155,7 @@
                 },
                 Description: {
                     required: true,
-                    maxlength: 200
+                  //  maxlength: 200
                 }
             }, null, success);
         });
@@ -165,6 +168,11 @@
                 location.href = "@Url.Action("List", "Admin", new {area = ActivityModule.Area})";
             }
         }
-
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('#Description', {
+                afterBlur: function() { this.sync(); }
+            });
+        });
     </script>
 }

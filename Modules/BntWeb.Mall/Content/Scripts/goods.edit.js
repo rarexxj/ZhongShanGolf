@@ -20,6 +20,10 @@ jQuery(function ($) {
         },
         CategoryName: {
             required: true
+        },
+        Introduction :{
+            required: true,
+            maxlength: 60
         }
     }, beforeSubmit, success);
 

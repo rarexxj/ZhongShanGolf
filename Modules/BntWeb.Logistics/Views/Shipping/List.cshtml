@@ -17,12 +17,15 @@
     }
 </style>
 @section HeaderRight {
-
+    <a class="btn btn-info publish" href="@Url.Action("Create", "Shipping", new {area = LogisticsModule.Area})">
+        <i class="icon-plus bigger-110"></i>
+        新建
+    </a>
 }
 <div class="form-group">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-3 query-form-item">
-            <label class="col-sm-4 col-md-3 control-label no-padding-right" for="Title"> 配送方式名称 </label>
+            <label class="col-sm-4 col-md-3 control-label no-padding-right" for="ShippingName"> 配送方式名称 </label>
             <div class="col-sm-8 col-md-9">
                 <div class="clearfix">
                     <input type="text" id="ShippingName" name="ShippingName" placeholder="配送方式名称" value="" class="col-md-12" />
@@ -46,6 +49,7 @@
                 <tr>
                     <th>配送方式名称</th>
                     <th>配送方式描述</th>
+                    <th>配送方式编码</th>
                     <th>是否默认</th>
                     <th>时间</th>
                     <th>状态</th>
@@ -66,7 +70,9 @@
         var url_loadPage = "@Url.Action("ListOnPage", "Shipping", new {area = LogisticsModule.Area})";
         var url_switchShipping = "@Url.Action("Switch", "Shipping", new {area = LogisticsModule.Area })";
         var url_defaultShipping = "@Url.Action("SetDefault", "Shipping", new {area = LogisticsModule.Area})";
-
+        var url_EditShipping = "@Url.Action("Edit", "Shipping", new {area = LogisticsModule.Area })";    
+    
+        var url_DeleteShipping = "@Url.Action("Delete", "Shipping", new {area = LogisticsModule.Area })";    
     </script>
     @Scripts.Render("~/js/admin/logistics/shipping/list")
 }
