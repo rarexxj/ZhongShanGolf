@@ -50,8 +50,8 @@
 			        return "";
 			    }
 			},
-			{ "mData": "Email", 'sClass': 'left' },
-			{ "mData": "PhoneNumber", 'sClass': 'left' },
+			//{ "mData": "Email", 'sClass': 'left' },
+			//{ "mData": "PhoneNumber", 'sClass': 'left' },
 			{
 			    "mData": "CreateTime", 'sClass': 'left',
 			    "mRender": function (data, type, full) {
