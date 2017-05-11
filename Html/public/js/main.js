@@ -74,6 +74,12 @@ $(function () {
         }
     }
 
+
+    function area(option) {
+
+
+    }
+
     //回跳登录页
     $.Backlog = $.BACKLOGIN = function (back) {
         var from = (back ? back : (location.pathname + location.search));
@@ -107,10 +113,10 @@ $(function () {
             if (user) {
                 user = JSON.parse(window.base64decodes(user))
                 $.put_user(user)
-                localStorage.setItem('qy_loginToken', user.PhoneNumber + ':' + user.DynamicToken);
+                localStorage.setItem('qy_loginToken', user.UserName + ':' + user.DynamicToken);
                 //新增
-                if(user.Avatar != null){
-                    localStorage['qy_head']=user.Id+'|'+user.Avatar.SmallThumbnail;
+                if (user.Avatar != null) {
+                    localStorage['qy_head'] = user.Id + '|' + user.Avatar.SmallThumbnail;
                 }
                 $.removeCookie('userInfo');
             }
@@ -141,14 +147,14 @@ $(function () {
                     return false
                 }
                 if (res.returnCode != '200') {
-                    $.oppo(res.msg,1)
+                    $.oppo(res.msg, 1)
                 }
             }
 
         })
     }
 
-    // $.nouser();
+    $.nouser();
 
 
     //保留两位小数

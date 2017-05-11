@@ -1,6 +1,7 @@
 $(function () {
     $.ADDLOAD();
-    window.TOKEN = localStorage.getItem('qy_loginToken');
+    $.checkuser();
+    // window.TOKEN = localStorage.getItem('qy_loginToken');
     var id = $.getUrlParam('id');
     new Vue({
         el: '#main',
@@ -14,9 +15,6 @@ $(function () {
             var _this = this;
             _this.ajax();
             _this.$nextTick(function () {
-                setTimeout(function () {
-                    _this.swipe();
-                }, 400);
                 _this.guige();
                 _this.Calculation();
                 // _this.tab();
@@ -29,9 +27,9 @@ $(function () {
         methods: {
             ajax: function () {
                 var _this = this;
-                if (localStorage.getItem('qy_loginToken')) {
-                    $.checkuser()
-                }
+                // if (localStorage.getItem('qy_loginToken')) {
+                //     $.checkuser()
+                // }
                 $.ajax({
                     url: '/Api/v1/Mall/Goods/Attribute',
                     type: 'get',
@@ -42,12 +40,15 @@ $(function () {
                     if (rs.returnCode == '200') {
                         _this.info = rs.data;
                         _this.guigechioce();
+                        _this.$nextTick(function () {
+                            _this.swipee();
+                        })
                         $.RMLOAD()
                     }
                 });
             },
             //banner滚动
-            swipe: function () {
+            swipee: function () {
                 var mySwiper = new Swiper('.swiper-container', {
                     direction: 'horizontal',
                     loop: true,
@@ -115,17 +116,14 @@ $(function () {
             collect: function () {
                 var _this = this;
                 $('#main .coll').on('click', function () {
-                    if (!window.TOKEN) {
-                        $.oppo('您还未登陆', 1);
+
+                    // _this.ajaxadd();
+                    if ($(this).hasClass('cur')) {
+                        _this.ajaxcancel()
                     } else {
-                        $.checkuser();
-                        // _this.ajaxadd();
-                        if ($(this).hasClass('cur')) {
-                            _this.ajaxcancel()
-                        } else {
-                            _this.ajaxadd();
-                        }
+                        _this.ajaxadd();
                     }
+
                 })
             },
             //取消收藏
@@ -226,7 +224,6 @@ $(function () {
                         vals = $.trim($(this).text())
                     zuhe.push(vals)
                 })
-                console.log(zuhe)
                 for (var i in _this.info.SingleGoogsList) {
                     var datas = _this.info.SingleGoogsList[i]
                     var addj = JSON.stringify(datas.zuhe.name.sort());
@@ -275,37 +272,13 @@ $(function () {
                 //立即购买
                 var _this = this;
                 $('#main').on('click', '.pro-in-gobuy', function () {
-                    if (!TOKEN) {
-                        $.oppo('您还未登录', 1, function () {
-                            if ($.is_weixin()) {
-                                window.location.href = '/WeiXin/Login';
-                            } else {
-                                window.location.href = '/Html/html/personalcenter/login.html';
-                            }
-                        })
-                    } else {
-                        if ($(this).hasClass('on')) {
-                            return false
-                        } else {
-                            if (!$('.get-btn').attr('data-id')) {
-                                $.oppo('请选择规格', 1);
-                                // $('.size-mask').show();
-                            } else {
-                                if ($('.kc').html() == 0) {
-                                    $.oppo('库存不足', 1)
-                                } else {
-                                    window.location.href = "/Html/html/shopcar/settlement.html?gid=" + $('.get-btn').attr('data-id') + "|" + $('.getnum .amount').val()
-                                }
 
-                            }
-                        }
-                    }
-                });
-                //购买
-                $('#main').on('click', '.gobuy', function () {
-                    if (window.TOKEN) {
-                        if (!($('.get-btn').attr('data-id'))) {
-                            $('.size-mask').show();
+                    if ($(this).hasClass('on')) {
+                        return false
+                    } else {
+                        if (!$('.get-btn').attr('data-id')) {
+                            $.oppo('请选择规格', 1);
+                            // $('.size-mask').show();
                         } else {
                             if ($('.kc').html() == 0) {
                                 $.oppo('库存不足', 1)
@@ -314,6 +287,20 @@ $(function () {
                             }
 
                         }
+                    }
+
+                });
+                //购买
+                $('#main').on('click', '.gobuy', function () {
+                    if (!($('.get-btn').attr('data-id'))) {
+                        $('.size-mask').show();
+                    } else {
+                        if ($('.kc').html() == 0) {
+                            $.oppo('库存不足', 1)
+                        } else {
+                            window.location.href = "/Html/html/shopcar/settlement.html?gid=" + $('.get-btn').attr('data-id') + "|" + $('.getnum .amount').val()
+                        }
+
                     }
                 })
 

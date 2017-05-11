@@ -50,7 +50,7 @@ $(function () {
                             var str = rs.data.ShippingTime.split(' ');
                             str = str.toString().replace(/-/g, "/");
                             var date = new Date(str);
-                            var deadline = date.getTime() + 7 * 24 * 60 * 60 * 1000;
+                            var deadline = date.getTime() + 7 * 24 *55 * 60 * 1000;
                             var mytime = new Date()
                             var nowtime = mytime.getTime();
                             var last = (deadline - nowtime) / 1000;
@@ -95,7 +95,7 @@ $(function () {
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
                         $.oppo('成功取消订单', 1, function () {
-                            window.location.replace("/Html/html/personalcenter/myorder.html?orderType=0")
+                            window.location.replace("/Html/html/personalcenter/integralorder.html")
                         })
                     }
                 })
@@ -107,7 +107,7 @@ $(function () {
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
                         $.oppo('成功确认收货', 1, function () {
-                            window.location.replace("/Html/html/personalcenter/myorder.html?orderType=0")
+                            window.location.replace("/Html/html/personalcenter/integralorder.html")
                         })
                     }
                 })
@@ -129,7 +129,7 @@ $(function () {
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
                         $.oppo('成功删除订单', 1, function () {
-                            window.location.replace("/Html/html/personalcenter/myorder.html?orderType=0")
+                            window.location.replace("/Html/html/personalcenter/integralorder.html")
                         })
                     }
                 })
@@ -138,7 +138,7 @@ $(function () {
                 var btn = true;
                 var minute_elem = $(id).find('.min');
                 var second_elem = $(id).find('.sec');
-                var end_time = new Date(time).getTime() + 60 * 60 * 1000; //月份是实际月份-1
+                var end_time = new Date(time).getTime() + 55 * 60 * 1000; //月份是实际月份-1
                 var sys_second = (end_time - new Date().getTime()) / 1000;
                 if (btn) {
                     var minute = Math.floor((sys_second / 60) % 60);
@@ -154,7 +154,7 @@ $(function () {
                             $(minute_elem).html(minute < 10 ? "0" + minute : minute); //计算分钟
                             $(second_elem).html(second < 10 ? "0" + second : second); //计算秒杀
                         } else {
-                            window.location.replace("/Html/html/personalcenter/personalcenter.html")
+                            window.location.replace("/Html/html/personalcenter/integralorder.html")
                             clearInterval(index);
                             return; //停止下面代码执行
                         }

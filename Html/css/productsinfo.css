@@ -39,7 +39,7 @@
 
 .pro-info .content .name {
     font-size: 0.38rem;
-    line-height: 0.36rem;
+    line-height: 0.5rem;
     color: #333;
 }
 
@@ -78,7 +78,7 @@
 
 }
 .infoajax img{
-    width:7.5rem;
+    width:6rem;
 }
 .collect{
     color: #cebd78;
@@ -107,7 +107,7 @@
     height: 0.88rem;
     line-height: 0.88rem;
     background: #fff;
-    padding: 0 0.15rem;
+    padding: 0 0.25rem;
     border-bottom: 1px solid #e8e8e8;
     border-top: 1px solid #e8e8e8;
     margin-top: 0.2rem;
@@ -140,12 +140,13 @@
 .pro-info .information .btn {
     float: left;
     width: 50%;
-    height: 0.84rem;
+    height: 0.88rem;
     font-size: 0.3rem;
     color: #333;
-    line-height: 0.84rem;
-    text-align: center;
-    border-bottom: 0.04rem solid #fff;
+    line-height: 0.88rem;
+    margin-left: 0.25rem;
+    /*text-align: center;*/
+    /*border-bottom: 0.04rem solid #fff;*/
 }
 
 .pro-info .information .btn.cur {
@@ -154,7 +155,6 @@
 }
 
 .pro-info .information .infoajax {
-    width:6.4rem;
     overflow: hidden;
 }
 
@@ -459,7 +459,7 @@
     font-weight: bold;
 }
 .infoajax{
-    padding-top: 0.02rem;
+    padding: 0.02rem 0.2rem 0 0.2rem;
 }
 .che-com .pro-style {
     background: #fff;

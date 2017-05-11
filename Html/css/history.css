@@ -44,7 +44,7 @@
 }
 .history .content a {
     display: block;
-    padding: 0.35rem 0.15rem 0.15rem 0.15rem;
+    padding: 0.45rem 0.15rem 0.15rem 0.15rem;
     background: #fff;
     width: 2.84rem;
     position: relative;
@@ -86,8 +86,12 @@
     font-size: 0.24rem;
     line-height: 0.3rem;
     color: #666;
-    right: 0.1rem;
+    left:50%;
+    margin-left: -1.42rem;
     top: 0.1rem;
+    width:2.84rem;
+    display: inline-block;
+    text-align: center;
 }
 
 .search-box {

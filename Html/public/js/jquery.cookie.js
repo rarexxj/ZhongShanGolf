@@ -108,9 +108,8 @@
 		if ($.cookie(key) === undefined) {
 			return false;
 		}
-
 		// Must not alter options, thus extending a fresh object...
-		$.cookie(key, '', $.extend({}, options, { expires: -1 }));
+		$.cookie(key, '', $.extend({}, options, { expires: -1,path:'/' }));
 		return !$.cookie(key);
 	};
 

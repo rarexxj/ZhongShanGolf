@@ -57,16 +57,16 @@
                 <i v-if="info.PendingPayment != 0">{{info.PendingPayment}}</i>
             </a>
             <a href="/Html/html/personalcenter/myorder.html?orderType=2" class="get">
+                <div class="tt">待发货</div>
+                <i v-if="info.WaitingForReceiving != 0">{{info.WaitingForDelivery}}</i>
+            </a>
+            <a href="/Html/html/personalcenter/myorder.html?orderType=3" class="get">
                 <div class="tt">待收货</div>
                 <i v-if="info.WaitingForReceiving != 0">{{info.WaitingForReceiving}}</i>
             </a>
-            <a href="/Html/html/personalcenter/myorder.html?orderType=3" class="evaluate">
-                <div class="tt">待评价</div>
-                <i v-if="info.WaitingForEvaluate != 0">{{info.WaitingForEvaluate}}</i>
-            </a>
             <a href="/Html/html/personalcenter/myorder.html?orderType=4" class="service">
-                <div class="tt">售后</div>
-                <i v-if="info.HasRefund != 0">{{info.HasRefund}}</i>
+                <div class="tt">已完成</div>
+                <i v-if="info.HasRefund != 0">{{info.HasCompleted}}</i>
             </a>
         </div>
     </div>

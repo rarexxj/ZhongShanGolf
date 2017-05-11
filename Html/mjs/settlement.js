@@ -41,7 +41,6 @@ $(function () {
         methods: {
             ajax: function () {
                 var _this = this;
-                console.log(_this.data1)
                 $.ajax({
                     url: '/Api/v1/Mall/OrderCalculation',
                     data: _this.data1,
@@ -59,6 +58,9 @@ $(function () {
                 //选择地址
                 $('#main').on('click', '.choadd .a', function () {
                     window.location.href = "/Html/html/shopcar/chooseaddress.html?gid=" + gid
+                })
+                $('#main').on('click', '.addadd .a', function () {
+                    window.location.href = "/Html/html/shopcar/chooseaddaddress.html?gid=" + gid
                 })
 
             },

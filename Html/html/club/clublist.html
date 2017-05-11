@@ -32,7 +32,8 @@
                         <span class="pro-int-title">{{list.Title}}</span>
                         <span class="pro-int-time">比赛时间：{{list.StartTime.split(' ')[0]}}至{{list.EndTime.split(' ')[0]}}</span>
                     </div>
-                    <a :href="'/Html/html/club/join.html?id='+list.Id" class="fr pro-join">立即报名</a>
+                    <a v-if="list.Status==1&&!list.Apply" :href="'/Html/html/club/join.html?id='+list.Id" class="fr pro-join">立即报名</a>
+                    <a v-if="list.Apply" href="javascript:;" class="fr pro-join">已报名</a>
                 </div>
             </a>
         </div>

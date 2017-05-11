@@ -31,7 +31,8 @@
         <p class="deadline">还剩下<span class="min">59</span>分<span class="sec">59</span>秒 支付（若未支付订单将取消）</p>
         <div class="btns f-cb">
             <div class="btn fl can-btns">取消订单</div>
-            <a :href="'/Html/html/shopcar/pay.html?id='+info.Id+'&OrderNo='+info.OrderNo+'&money='+info.PayFee+'&time='+info.CreateTime" class="btn fr cur">立即付款</a>
+            <a :href="'/Html/html/shopcar/pay.html?id='+info.Id+'&OrderNo='+info.OrderNo+'&money='+info.PayFee+'&time='+info.CreateTime"
+               class="btn fr cur">立即付款</a>
 
         </div>
     </div>
@@ -65,12 +66,12 @@
     </div>
     <!--已评价-->
     <!--<div class="status"  v-if="(info.EvaluateStatus == 1||info.EvaluateStatus == 2)&&info.OrderStatus==3&&info.RefundStatus==0">-->
-        <!--<p>订单编号：{{info.OrderNo}}</p>-->
-        <!--<p>订单状态：<span class="dccc8d">交易完成</span></p>-->
-        <!--<div class="btns f-cb">-->
-            <!--<div class="btn fl del-btns delete-btn">删除订单</div>-->
-            <!--<a :href="'/Html/html/personalcenter/checkcomment.html?id='+info.Id" class="btn fr cur">查看评价</a>-->
-        <!--</div>-->
+    <!--<p>订单编号：{{info.OrderNo}}</p>-->
+    <!--<p>订单状态：<span class="dccc8d">交易完成</span></p>-->
+    <!--<div class="btns f-cb">-->
+    <!--<div class="btn fl del-btns delete-btn">删除订单</div>-->
+    <!--<a :href="'/Html/html/personalcenter/checkcomment.html?id='+info.Id" class="btn fr cur">查看评价</a>-->
+    <!--</div>-->
     <!--</div>-->
     <!--已关闭-->
     <div class="status" v-if="info.OrderStatus == 4&&info.RefundStatus==0">
@@ -82,19 +83,22 @@
     </div>
     <!--&lt;!&ndash;退货中&ndash;&gt;-->
     <!--<div class="status" v-if="info.RefundStatus==1">-->
-        <!--<p>订单编号：{{info.OrderNo}}</p>-->
-        <!--<p>订单状态：<span class="dccc8d">退货中</span></p>-->
+    <!--<p>订单编号：{{info.OrderNo}}</p>-->
+    <!--<p>订单状态：<span class="dccc8d">退货中</span></p>-->
     <!--</div>-->
     <!--&lt;!&ndash;退款成功&ndash;&gt;-->
     <!--<div class="status" v-if="info.RefundStatus==2">-->
-        <!--<p>订单编号：{{OrderNo}}</p>-->
-        <!--<p>订单状态：<span class="dccc8d">退货成功</span></p>-->
+    <!--<p>订单编号：{{OrderNo}}</p>-->
+    <!--<p>订单状态：<span class="dccc8d">退货成功</span></p>-->
     <!--</div>-->
     <div class="logi" v-if="info.ShippingStatus == 1">
-        <a :href="'http://m.kuaidi100.com/index_all.html?type='+info.ShippingCode+'&postid='+info.ShippingNo+'&callbackurl='+URL+'/Html/html/personalcenter/orderinfo.html?id='+info.Id">
-            <!--<div class="now">[杭州市]快件已到浙江省杭州市西湖区..</div>-->
-            <!--<span class="time">2016-07-10 15:55:00 </span>-->
-            <span class="click">点击查看物流</span>
+        <a :href="'/Html/html/personalcenter/logistics.html?id='+info.Id" class="clearfix">
+            <span class="ship-logo fl"></span>
+            <div class="fl ship-box">
+                <div class="now">{{newlogist.Context}}</div>
+                <span class="time">{{newlogist.Time}}</span>
+            </div>
+            <!--<span class="click">点击查看物流</span>-->
             <i></i>
         </a>
     </div>
@@ -126,62 +130,62 @@
         <div class="price">¥ <span class="amo">{{info.ShippingFee.toFixed(2)}}</span></div>
     </div>
     <!--<div class="line orderin-jif">-->
-        <!--<div class="tt">积分抵扣</div>-->
-        <!--<div class="price ">¥ <span class="amo">{{info.IntegralMoney.toFixed(2)}}</span></div>-->
+    <!--<div class="tt">积分抵扣</div>-->
+    <!--<div class="price ">¥ <span class="amo">{{info.IntegralMoney.toFixed(2)}}</span></div>-->
     <!--</div>-->
     <!--<div class="line orderin-yhq" >-->
-        <!--<div class="tt">优惠券</div>-->
-        <!--<div class="price ">¥ <span class="amo">{{info.CouponMoney.toFixed(2)}}</span></div>-->
+    <!--<div class="tt">优惠券</div>-->
+    <!--<div class="price ">¥ <span class="amo">{{info.CouponMoney.toFixed(2)}}</span></div>-->
     <!--</div>-->
     <!--<div class="line orderin-yhq" >-->
-        <!--<div class="tt">配送时间</div>-->
-        <!--<div class="price "><span class="amo">{{info.BestTime}}</span></div>-->
+    <!--<div class="tt">配送时间</div>-->
+    <!--<div class="price "><span class="amo">{{info.BestTime}}</span></div>-->
     <!--</div>-->
     <div class="paymoney">
-        <p class="sum" >实付金额：<span>¥{{info.PayFee.toFixed(2)}}</span></p>
+        <p class="sum">实付金额：<span>¥{{info.PayFee.toFixed(2)}}</span></p>
         <!--<p class="sum" v-else="">实付金额：<span>¥{{info.PayFee}}</span></p>-->
         <p class="time">下单时间：{{info.CreateTime}}</p>
     </div>
 </div>
 <!--<div class="pop dn pop-del">-->
-    <!--<div class="box">-->
-        <!--<p class="tit">确认删除订单?</p>-->
-        <!--<div class="btnb">-->
-            <!--<p><a class="no">取消</a></p>-->
-            <!--<p><a class="ok delete-btn">确定</a></p>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--<div class="box">-->
+<!--<p class="tit">确认删除订单?</p>-->
+<!--<div class="btnb">-->
+<!--<p><a class="no">取消</a></p>-->
+<!--<p><a class="ok delete-btn">确定</a></p>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->
 <!--<div class="pop dn pop-can">-->
-    <!--<div class="box">-->
-        <!--<p class="tit">确认取消订单?</p>-->
-        <!--<div class="btnb">-->
-            <!--<p><a class="no">取消</a></p>-->
-            <!--<p><a class="ok can-btn">确定</a></p>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--<div class="box">-->
+<!--<p class="tit">确认取消订单?</p>-->
+<!--<div class="btnb">-->
+<!--<p><a class="no">取消</a></p>-->
+<!--<p><a class="ok can-btn">确定</a></p>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->
 <!--<div class="pop dn pop-com">-->
-    <!--<div class="box">-->
-        <!--<p class="tit">确认收货?</p>-->
-        <!--<div class="btnb">-->
-            <!--<p><a class="no">取消</a></p>-->
-            <!--<p><a class="ok confirm-btn">确定</a></p>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--<div class="box">-->
+<!--<p class="tit">确认收货?</p>-->
+<!--<div class="btnb">-->
+<!--<p><a class="no">取消</a></p>-->
+<!--<p><a class="ok confirm-btn">确定</a></p>-->
 <!--</div>-->
-<!--<div class="new-loading">-->
-<!--<ul class="small-loading">-->
-<!--<li></li>-->
-<!--<li></li>-->
-<!--<li></li>-->
-<!--<li></li>-->
-<!--<li></li>-->
-<!--<li></li>-->
-<!--<li></li>-->
-<!--<li></li>-->
-<!--</ul>-->
 <!--</div>-->
+<!--</div>-->
+<div class="new-loading">
+    <ul class="small-loading">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
 <script src="/Html/mjs/orderinfo.js"></script>
 </body>
 </html>

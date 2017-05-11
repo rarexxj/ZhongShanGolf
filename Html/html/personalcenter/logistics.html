@@ -19,15 +19,31 @@
     <script src="/Html/public/js/main.js"></script>
     <link rel="stylesheet" href="/Html/public/css/reset.css">
     <link rel="stylesheet" href="/Html/public/css/main.css">
-    <link rel="stylesheet" href="/Html/css/birthday.css">
+    <link rel="stylesheet" href="/Html/css/logistics.css">
 </head>
-<body style="background-color: #f3fbfd">
-<div class="addaddress" id="main">
-    <div class="line f-cb">
-        <input type="date" class="date" value="">
+<body style="background-color: #fff">
+<div class="logistics" id="main">
+    <div class="logistics-top-box">
+        <div class="logistics-company">物流公司：<span>{{info.ShippingName}}</span></div>
+        <div class="logistics-danh">物流单号：<span>{{info.ShippingNo}}</span></div>
     </div>
-    <div class="submit" @click="ajax">提交</div>
+    <div class="heng"></div>
+    <div class="clearfix wz-box">
+        <div class="fl log-quan">
+            <span class="log-top-quan"></span>
+            <span class="log-top-shu"></span>
+        </div>
+        <div class="fl wz-main">
+            <ul>
+                <li class="" v-for="list in info.list">
+                    <div class="wz">{{list.Context}}</div>
+                    <span class="time">{{list.Time}}</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
 </div>
-<script src="/Html/mjs/birthday.js"></script>
+<script src="/Html/mjs/logistics.js"></script>
 </body>
 </html>

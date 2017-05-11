@@ -98,7 +98,7 @@ $(function () {
                     if (rs.returnCode == '200') {
                         $('.pop-del').hide();
                         $.oppo('成功删除订单', 1, function () {
-                            window.location.replace("/Html/html/personalcenter/integralmyorder.html")
+                            window.location.replace("/Html/html/personalcenter/integralorder.html")
                         })
                     }
                 })
@@ -111,7 +111,7 @@ $(function () {
                     if (rs.returnCode == '200') {
                         $('.pop-can').hide();
                         $.oppo('成功取消订单', 1, function () {
-                            window.location.replace("/Html/html/personalcenter/integralmyorder.html")
+                            window.location.replace("/Html/html/personalcenter/integralorder.html")
                         })
                     }
                 })
@@ -124,7 +124,7 @@ $(function () {
                     if (rs.returnCode == '200') {
                         $('.pop-com').hide();
                         $.oppo('成功确认收货', 1, function () {
-                            window.location.replace("/Html/html/personalcenter/integralmyorder.html")
+                            window.location.replace("/Html/html/personalcenter/integralorder.html")
                         })
                     }
                 })

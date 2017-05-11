@@ -9,7 +9,8 @@ $(function () {
             time: '',
             id:'',
             money:'',
-            filesid:''
+            filesid:'',
+            newlogist:[]
         },
         ready: function () {
             var _this = this;
@@ -31,8 +32,8 @@ $(function () {
                         _this.time = rs.data.CreateTime.toString().replace(/-/g, "/");
                         _this.id=rs.data.Id;
                         _this.money=rs.data.PayFee;
-                        console.log(_this.time);
                         _this.$nextTick(function () {
+                            _this.newestajax();
                             if (rs.data.OrderStatus == 0) {
                                 _this.countDown(_this.time, '.deadline');
                             }
@@ -43,7 +44,6 @@ $(function () {
                         // }
                         // b=a.join('|');
                         // _this.filesid=b;
-                        $.RMLOAD();
 
                         //计算剩余确认收货时间
                         if (rs.data.OrderStatus == 2) {
@@ -160,6 +160,24 @@ $(function () {
                         }
                     }, 1000)
                 }
+            },
+            newestajax:function () {
+                var _this=this;
+                $.ajax({
+                    url: '/Api/v1/Order/logistics/newResKuai',
+                    type: 'get',
+                    data:{
+                        orderId:id
+                    }
+                }).done(function (rs) {
+                    if (rs.returnCode == '200') {
+                        _this.newlogist=rs.data;
+                        if(rs.data==null){
+                            $('.logi').hide();
+                        }
+                        $.RMLOAD();
+                    }
+                })
             }
         }
     })

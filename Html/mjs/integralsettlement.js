@@ -59,6 +59,9 @@ $(function () {
                 $('#main').on('click', '.choadd .a', function () {
                     window.location.href = "/Html/html/shopcar/chooseaddress.html?gid=" + gid+'&type='+2
                 })
+                $('#main').on('click', '.addadd .a', function () {
+                    window.location.href = "/Html/html/shopcar/chooseaddaddress.html?gid=" + gid+'&type='+2
+                })
 
             },
             //提交订单

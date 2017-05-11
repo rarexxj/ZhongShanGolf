@@ -34,7 +34,7 @@ $(function () {
                 var btn = true;
                 var minute_elem = $(id).find('.min');
                 var second_elem = $(id).find('.sec');
-                var end_time = new Date(time).getTime() + 60 * 60 * 1000, //月份是实际月份-1
+                var end_time = new Date(time).getTime() + 55 * 60 * 1000, //月份是实际月份-1
                     sys_second = (end_time - new Date().getTime()) / 1000;
                 if (btn) {
                     var minute = Math.floor((sys_second / 60) % 60);
@@ -73,11 +73,12 @@ $(function () {
                     $.ajax({
                         url:'/Api/v1/Payment/BalancePay/'+Id,
                         type:'post',
-                        dataType:'json',
-                        data:{}
+                        dataType:'json'
                     }).done(function (rs) {
                         if(rs.returnCode=='200'){
-
+                            $.oppo('兑换成功',1,function () {
+                                location.href='/Html/html/personalcenter/integralorder.html'
+                            })
                         }
                     })
                 })

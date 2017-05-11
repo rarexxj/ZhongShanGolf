@@ -4,6 +4,7 @@ $(function () {
         el: '#main',
         data: {
             proinfo: [],
+            TotalCount:[],
             infodata: {
                 wordKey: '',
                 goodsCategory: 2,
@@ -42,7 +43,8 @@ $(function () {
                         $.oppo('请输入关键字', 1)
                     } else {
                         $.ADDLOAD();
-                        _this.infodata.wordKey=$('.text').val();
+                        _this.infodata.wordKey=$.trim($('.text').val());
+                        _this.infodata.pageNo=1;
                         _this.proinfoajax();
                         $('.text').val('');
                         $('.search-box').hide();
@@ -74,7 +76,12 @@ $(function () {
                     data: _this.infodata
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
-                        _this.proinfo = rs.data;
+                        _this.TotalCount=rs.data.TotalCount;
+                        if(_this.infodata.pageNo==1){
+                            _this.proinfo=rs.data.Goods;
+                        }else{
+                            _this.proinfo =_this.proinfo.concat(rs.data.Goods);
+                        }
                         _this.allpage = rs.data.TotalCount / _this.infodata.limit;
                         _this.$nextTick(function () {
                             $.RMLOAD();
@@ -86,7 +93,7 @@ $(function () {
             scrollload: function () {
                 var flag = true;
                 var _this = this;
-                $(window).scroll(function () {
+                $('.scrollbox').scroll(function () {
                     var H = $('.scroll')[0].getBoundingClientRect().top;
                     var h = $(window).height();
                     if (H - h < 0 && flag == true) {

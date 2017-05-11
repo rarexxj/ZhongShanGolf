@@ -23,16 +23,17 @@
 </head>
 <body style="background-color: #f5f5f5">
 <div id="main">
-    <div class="scrollbox">
-        <div class="index-search">
-            <div class="index-searchbox">
-                <!--<span class="index-searchbox-name">搜索商品</span>-->
-                <!--<input type="text" id="search" placeholder="搜索商品">-->
-                <a class="index-searchlogo" href="javascript:;">搜索商品</a>
-            </div>
+    <div class="index-search">
+        <div class="index-searchbox">
+            <!--<span class="index-searchbox-name">搜索商品</span>-->
+            <!--<input type="text" id="search" placeholder="搜索商品">-->
+            <a class="index-searchlogo" href="javascript:;">搜索商品</a>
         </div>
+    </div>
+    <div class="scrollbox">
+
         <div class="mainbox">
-            <a :href="'/Html/html/buy/productsinfo.html?id='+list.Id" class="main clearfix" v-for="list in proinfo.Goods">
+            <a :href="'/Html/html/buy/productsinfo.html?id='+list.Id" class="main clearfix" v-for="list in proinfo">
                 <div class="pro-img fl" :style="{backgroundImage:'url('+list.MainImage.RelativePath+')'}"></div>
                 <div class="pro-int fl">
                     <div class="pro-int-name">{{list.Name}}</div>
@@ -43,26 +44,27 @@
             </a>
             <div class="scroll" style="width: 100%;height:0.01rem;"></div>
         </div>
-        <div class="nothing" v-if="proinfo.TotalCount==0">
+        <div class="nothing" v-if="TotalCount==0">
             <div class="tb"></div>
             <p>抱歉，没有找到符合条件的商品</p>
         </div>
-        <div class="search-box" id="search_box">
-            <div class="content">
-                <div class="search fl">
-                    <div class="close fl"></div>
-                    <input type="text" class="text" id="search_alert" placeholder="搜索关键字">
-                    <span class="delete"></span>
-                </div>
-                <div class="btn fr">搜索</div>
+
+    </div>
+    <div class="search-box" id="search_box">
+        <div class="content">
+            <div class="search fl">
+                <div class="close fl"></div>
+                <input type="text" class="text" id="search_alert" placeholder="搜索关键字">
+                <span class="delete"></span>
             </div>
-            <!--<div class="con">-->
-            <!--<p>大家都在搜...</p>-->
-            <!--<ul>-->
-            <!--<li v-for="tag in taginfo" :data-tag="tag">{{tag}}</li>-->
-            <!--</ul>-->
-            <!--</div>-->
+            <div class="btn fr">搜索</div>
         </div>
+        <!--<div class="con">-->
+        <!--<p>大家都在搜...</p>-->
+        <!--<ul>-->
+        <!--<li v-for="tag in taginfo" :data-tag="tag">{{tag}}</li>-->
+        <!--</ul>-->
+        <!--</div>-->
     </div>
     <div class="index-navbox clearfix">
         <a href="/index.html" class="active">
@@ -97,5 +99,6 @@
     </div>
 </div>
 <script type="text/javascript" src="/Html/mjs/index.js"></script>
+<!--<script type="text/javascript" src="/Html/mjs/1.js"></script>-->
 </body>
 </html>

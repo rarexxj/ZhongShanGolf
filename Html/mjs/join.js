@@ -43,7 +43,6 @@ $(function () {
             },
             submitajax: function () {
                 var _this = this;
-                _this.layer = true;
                 $.ajax({
                     url: '/Api/v1/Activity/' + id + '/Apply',
                     dataType: 'json',
@@ -53,19 +52,19 @@ $(function () {
                         RealName: $('.jn-xx-name-in').val(),
                         PhoneNumber: $('.jn-xx-tel-in').val(),
                         Almost: $('.jn-xx-chad-in').val(),
-                        MemberCard: $('.vip-car-num').val(),
+                        MemberCard: $('.vip-car-num').val()?$('.vip-car-num').val():'',
                         GuestOne: $('.jn-xx-jb1').val(),
                         GuestTwo: $('.jn-xx-jb2').val(),
                         GuestThree: $('.jn-xx-jb3').val()
                     }
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
-                        
+                        _this.layer = true;
                     }
                 })
             },
             ok:function () {
-                window.location.href=''
+                window.location.href='/Html/html/club/clublist.html'
             }
         }
     })

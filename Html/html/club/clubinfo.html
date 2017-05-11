@@ -49,7 +49,8 @@
         <!--</ul>-->
         <!--</div>-->
     </div>
-    <a class="join" :href="'/Html/html/club/join.html?id='+info.Id">我要报名</a>
+    <a v-if="info.Status==1" class="join" :href="'/Html/html/club/join.html?id='+info.Id">我要报名</a>
+    <a v-if="info.HasApply" class="join" href="javascript:;">已报名</a>
 </div>
 <script type="text/javascript" src="/Html/mjs/clubinfo.js"></script>
 </body>
