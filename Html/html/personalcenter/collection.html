@@ -25,18 +25,19 @@
 <div id="main">
     <div class="collection" id="collection">
         <div class="box" v-for="data in info" :data-id="data.Id">
-            <!--<a :href="'/Html/Products/Info.html?id='+col.Id">-->
-            <div class="a clearfix">
-                <div class="img fl" :style="{backgroundImage: 'url('+ data.MainImage.MediumThumbnail +')'}"></div>
-                <div class="info fr">
-                    <div class="tt">{{data.Name}}</div>
-                    <!--<div class="zt"></div>-->
-                    <div class="bot f-cb clearfix">
-                        <div class="price fl">¥{{data.ShopPrice.toFixed(2)}}</div>
+            <a :href="'/Html/html/buy/productsinfo.html?id='+data.Id">
+                <div class="a clearfix">
+                    <div class="img fl" :style="{backgroundImage: 'url('+ data.MainImage.MediumThumbnail +')'}"></div>
+                    <div class="info fr">
+                        <div class="tt">{{data.Name}}</div>
+                        <!--<div class="zt"></div>-->
+                        <div class="bot f-cb clearfix">
+                            <div class="price fl">¥{{data.ShopPrice.toFixed(2)}}</div>
+                        </div>
+                        <div class="delete">删除</div>
                     </div>
-                    <div class="delete">删除</div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="scrolltop"></div>
     </div>

@@ -1,6 +1,6 @@
 $(function () {
     $.ADDLOAD();
-    window.TOKEN = localStorage.getItem('qy_loginToken');
+    $.checkuser();
     var id = $.getUrlParam('id');
     new Vue({
         el: '#main',
@@ -8,11 +8,15 @@ $(function () {
             goodId: id,
             info: [],
             imgs: '',
-            lei: []
+            lei: [],
+            idinfo: [],
+            Integral: '',
+            needIntegral: ''
         },
         ready: function () {
             var _this = this;
             _this.ajax();
+            _this.infoajax();
             _this.$nextTick(function () {
                 setTimeout(function () {
                     _this.swipe();
@@ -25,11 +29,22 @@ $(function () {
         },
 
         methods: {
+            infoajax: function () {
+                var _this = this;
+                $.ajax({
+                    url: '/Api/v1/Member/CenterInfo',
+                    type: 'get',
+                    dataType: 'json'
+                }).done(function (rs) {
+                    if (rs.returnCode == '200') {
+                        _this.idinfo = rs.data;
+                        _this.Integral = rs.data.Integral;
+                        $.RMLOAD();
+                    }
+                })
+            },
             ajax: function () {
                 var _this = this;
-                if (localStorage.getItem('qy_loginToken')) {
-                    $.checkuser()
-                }
                 $.ajax({
                     url: '/Api/v1/Mall/Goods/Attribute',
                     type: 'get',
@@ -39,6 +54,7 @@ $(function () {
                 }).done(function (rs) {
                     if (rs.returnCode == '200') {
                         _this.info = rs.data;
+                        _this.needIntegral = rs.data.Price;
                         _this.guigechioce();
                         $.RMLOAD()
                     }
@@ -233,45 +249,38 @@ $(function () {
                 //立即购买
                 var _this = this;
                 $('#main').on('click', '.pro-in-gobuy', function () {
-                    if (!TOKEN) {
-                        $.oppo('您还未登录', 1, function () {
-                            if ($.is_weixin()) {
-                                window.location.href = '/WeiXin/Login';
-                            } else {
-                                window.location.href = '/Html/html/personalcenter/login.html';
-                            }
-                        })
+                    if ($(this).hasClass('on')) {
+                        return false
                     } else {
-                        if ($(this).hasClass('on')) {
-                            return false
-                        } else {
-                            if (!$('.get-btn').attr('data-id')) {
-                                $.oppo('请选择规格', 1);
-                                // $('.size-mask').show();
-                            } else {
-                                if ($('.kc').html() == 0) {
-                                    $.oppo('库存不足', 1)
-                                } else {
-                                    window.location.href = "/Html/html/shopcar/integralsettlement.html?gid=" + $('.get-btn').attr('data-id') + "|" + $('.getnum .amount').val()
-                                }
-
-                            }
-                        }
-                    }
-                });
-                //购买
-                $('#main').on('click', '.gobuy', function () {
-                    if (window.TOKEN) {
-                        if (!($('.get-btn').attr('data-id'))) {
-                            $('.size-mask').show();
+                        if (!$('.get-btn').attr('data-id')) {
+                            $.oppo('请选择规格', 1);
+                            // $('.size-mask').show();
                         } else {
                             if ($('.kc').html() == 0) {
                                 $.oppo('库存不足', 1)
+                            } else if (_this.Integral < _this.needIntegral) {
+                                $.oppo('您的积分不足', 1)
                             } else {
-                                window.location.href = "/Html/html/shopcar/settlement.html?gid=" + $('.get-btn').attr('data-id') + "|" + $('.getnum .amount').val()
+                                window.location.href = "/Html/html/shopcar/integralsettlement.html?gid=" + $('.get-btn').attr('data-id') + "|" + $('.getnum .amount').val()
                             }
 
                         }
+                    }
+
+                });
+                //购买
+                $('#main').on('click', '.gobuy', function () {
+                    if (!($('.get-btn').attr('data-id'))) {
+                        $('.size-mask').show();
+                    } else {
+                        if ($('.kc').html() == 0) {
+                            $.oppo('库存不足', 1)
+                        } else if (_this.Integral < _this.needIntegral) {
+                            $.oppo('您的积分不足', 1)
+                        }  else {
+                            window.location.href = "/Html/html/shopcar/settlement.html?gid=" + $('.get-btn').attr('data-id') + "|" + $('.getnum .amount').val()
+                        }
+
                     }
                 })
 

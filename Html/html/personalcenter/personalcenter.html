@@ -25,7 +25,7 @@
 
 </head>
 <body style="background-color: #f7f7f7">
-<div class="per-cen pb140" id="percen">
+<div class="per-cen pb140" id="percen" v-cloak="">
     <div class="head">
         <a href="/Html/html/personalcenter/myinfo.html">
             <div class="img fl"><img v-if="ideninfo.Avatar" :src="ideninfo.Avatar.RelativePath" width="100%" height="100%" alt=""><img v-else="" src="/Html/css/img/img08.jpg" width="100%" height="100%" alt=""></div>
@@ -58,7 +58,7 @@
             </a>
             <a href="/Html/html/personalcenter/myorder.html?orderType=2" class="get">
                 <div class="tt">待发货</div>
-                <i v-if="info.WaitingForReceiving != 0">{{info.WaitingForDelivery}}</i>
+                <i v-if="info.WaitingForDelivery != 0">{{info.WaitingForDelivery}}</i>
             </a>
             <a href="/Html/html/personalcenter/myorder.html?orderType=3" class="get">
                 <div class="tt">待收货</div>
@@ -66,7 +66,7 @@
             </a>
             <a href="/Html/html/personalcenter/myorder.html?orderType=4" class="service">
                 <div class="tt">已完成</div>
-                <i v-if="info.HasRefund != 0">{{info.HasCompleted}}</i>
+                <i v-if="info.HasCompleted != 0">{{info.HasCompleted}}</i>
             </a>
         </div>
     </div>
@@ -119,18 +119,18 @@
         </div>
     </div>
 </div>
-<div class="new-loading">
-    <ul class="small-loading">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
+<!--<div class="new-loading">-->
+    <!--<ul class="small-loading">-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+        <!--<li></li>-->
+    <!--</ul>-->
+<!--</div>-->
 <script src="/Html/mjs/personalcenter.js"></script>
 </body>
 </html>

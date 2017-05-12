@@ -1,5 +1,5 @@
 $(function () {
-    $.ADDLOAD();
+    // $.ADDLOAD();
     $.checkuser();
     new Vue({
         el: '#percen',

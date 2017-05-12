@@ -1,6 +1,5 @@
 $(function () {
     $.ADDLOAD();
-    var reg = /^1[3|4|5|7|8]\d{9}$/;
     var gid = $.getUrlParam('gid');
     var type = $.getUrlParam('type');
 
@@ -100,7 +99,8 @@ $(function () {
             submit: function () {
                 var _this = this;
                 $('.submit').on('click', function () {
-
+                    var reg = /^1[3|4|5|7|8]\d{9}$/;
+                    var reg1=/^[1-9]\d{5}$/;
                     if ($('.use').val() == '') {
                         $.oppo('收货人不能为空', 1)
                         return false;
@@ -112,6 +112,9 @@ $(function () {
                         return false;
                     } else if ($('.postcode').val() == '') {
                         $.oppo('邮政编码不能为空', 1)
+                        return false;
+                    }else if (!reg1.test($('.postcode').val())) {
+                        $.oppo('邮政编码格式不对', 1)
                         return false;
                     } else if ($('#province').val() == '') {
                         $.oppo('省份不能为空', 1)

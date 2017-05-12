@@ -127,7 +127,8 @@
     </div>
     <div class="line">
         <div class="tt">邮费</div>
-        <div class="price">¥ <span class="amo">{{info.ShippingFee.toFixed(2)}}</span></div>
+        <div class="price" v-if="info.ShippingFee==0">包邮</div>
+        <div class="price" v-else>¥ <span class="amo">{{info.ShippingFee.toFixed(2)}}</span></div>
     </div>
     <!--<div class="line orderin-jif">-->
     <!--<div class="tt">积分抵扣</div>-->

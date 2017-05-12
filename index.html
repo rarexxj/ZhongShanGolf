@@ -25,9 +25,9 @@
 <div id="main">
     <div class="index-search">
         <div class="index-searchbox">
-            <!--<span class="index-searchbox-name">搜索商品</span>-->
-            <!--<input type="text" id="search" placeholder="搜索商品">-->
-            <a class="index-searchlogo" href="javascript:;">搜索商品</a>
+            <input type="text" id="search" placeholder="请输入商品名称" class="fl">
+            <span class="index-searchbox-name fr">搜索</span>
+            <!--<a class="index-searchlogo" href="javascript:;">搜索商品</a>-->
         </div>
     </div>
     <div class="scrollbox">
@@ -39,7 +39,7 @@
                     <div class="pro-int-name">{{list.Name}}</div>
                     <div class="pro-int-int">{{list.Introduction}}</div>
                     <div class="pro-int-logo">￥<span class="pro-int-price">{{list.ShopPrice.toFixed(2)}}</span></div>
-                    <div class="pro-int-buynum">{{list.SalesVolume}}人已付款</div>
+                    <div class="pro-int-buynum">{{list.PaymentAmount}}人已付款</div>
                 </div>
             </a>
             <div class="scroll" style="width: 100%;height:0.01rem;"></div>

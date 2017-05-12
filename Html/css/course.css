@@ -30,9 +30,20 @@
     background-color: #fff;
     text-align: center;
 }
+#search{
+    height:0.48rem;
+    margin-left: 0.15rem;
+    font-size: 0.24rem;
+    color: #c4c4c4;
+    width:4rem;
+}
 .index-searchbox-name{
-    font-size: 0.22rem;
-    color: #999;
+    background: url(img/logo65.png) no-repeat left;
+    background-size: 0.26rem 0.26rem;
+    font-size: 0.26rem;
+    padding-left: 0.33rem;
+    color: #142c60;
+    margin-right: 0.2rem;
 }
 .index-searchlogo {
     background-image: url(img/index-search1.png);

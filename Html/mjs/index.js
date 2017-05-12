@@ -26,27 +26,27 @@ $(function () {
             searchlink: function () {
                 var _this=this;
                 $('.index-search').on('click', function () {
-                    $('.search-box').show(100, function () {
-                        // setTimeout(function () {
-                        //     $('#search_alert').trigger('focus')
-                        // }, 2000)
-                    });
+                    // $('.search-box').show(100, function () {
+                    //     // setTimeout(function () {
+                    //     //     $('#search_alert').trigger('focus')
+                    //     // }, 2000)
+                    // });
 
 
                 })
-                $('.search-box .close').on('click', function () {
-                    $('.search-box').hide();
-                })
-                $('#main').on('click', '.search-box .btn', function () {
-                    var val = $('.search-box .text').val()
+                // $('.search-box .close').on('click', function () {
+                //     $('.search-box').hide();
+                // })
+                $('#main').on('click', '.index-searchbox-name', function () {
+                    var val = $('#search').val();
                     if (val == '') {
                         $.oppo('请输入关键字', 1)
                     } else {
                         $.ADDLOAD();
-                        _this.infodata.wordKey=$.trim($('.text').val());
+                        _this.infodata.wordKey=$.trim($('#search').val());
                         _this.infodata.pageNo=1;
                         _this.proinfoajax();
-                        $('.text').val('');
+                        // $('.text').val('');
                         $('.search-box').hide();
                         // window.location.href = "/Html/html/buy/searchlist.html?key=" + encodeURIComponent(encodeURIComponent(val))
                     }

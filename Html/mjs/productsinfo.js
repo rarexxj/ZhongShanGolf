@@ -152,7 +152,6 @@ $(function () {
             },
             guigechioce: function () {
                 var _this = this;
-                window.proimg = _this.info.MainImage.MediumThumbnail;
                 for (var i in _this.info.AttributeValues) {
                     if (!_this.info.AttributeValues[i].list) {
                         _this.info.AttributeValues[i].list = []
@@ -176,6 +175,7 @@ $(function () {
                         }
                         datas1['zuhe']['id'].push(datas1.Attributes[j].AttributeId)
                         datas1['zuhe']['name'].push(datas1.Attributes[j].AttributeValue)
+
                     }
 
                 }
@@ -185,7 +185,7 @@ $(function () {
 
                 for (var i = 0; i < _this.info.AttributeValues[0].AttributeValues.toString().split(',').length; i++) {
                     var zn = _this.info.AttributeValues[0].AttributeValues.toString().split(',')[i];
-                    var ci = []
+                    var ci = [];
                     for (var j = 0; j < _this.info.SingleGoogsList.length; j++) {
                         if (zn.toString() == _this.info.SingleGoogsList[j].Attributes[0].AttributeValue.toString()) {
                             if (_this.info.SingleGoogsList[j].Attributes[1]) {
@@ -206,12 +206,14 @@ $(function () {
             },
             chooses: function () {
                 var _this = this;
+
                 $('#main').on('click', '.choose-box>li', function () {
+
                     $('.getnum .amount').val(1)
                     $(this).addClass('choose-cur').siblings().removeClass('choose-cur')
                     _this.choose_zuhe();
                 })
-                $('.first .choose-box>li').on('click', function () {
+                $('#main').on('click','.first .choose-box>li', function () {
                     _this.choose_gg()
                 })
             },
@@ -234,14 +236,12 @@ $(function () {
                         _this.info.Stock = datas.Stock
                         if (datas.Image) {
                             _this.imgs = datas.Image.MediumThumbnail;
-                            console.log(_this.info)
                         } else {
                             _this.imgs = proimg
                         }
                         $('.get-btn').attr('data-id', datas.SingleGoodsId)
                     }
                 }
-
             },
             choose_gg: function () {
                 var _this = this;
@@ -249,9 +249,11 @@ $(function () {
                 $('.first .choose-cur').each(function (index) {
                     var px = $(this).attr('data-px'),
                         id = $(this).attr('data-id'),
-                        vals = $(this).text()
+                        vals = $.trim($(this).text());
                     gg.push(vals)
                 })
+                // console.log(_this.info.czuhe) //白色 蓝色
+
                 for (var i in _this.info.czuhe) {
                     var datas = _this.info.czuhe[i]
                     if (datas.zhu.toString() == gg.toString()) {
@@ -272,7 +274,6 @@ $(function () {
                 //立即购买
                 var _this = this;
                 $('#main').on('click', '.pro-in-gobuy', function () {
-
                     if ($(this).hasClass('on')) {
                         return false
                     } else {

@@ -39,7 +39,9 @@
                     <span class="nowp">¥<span class="int">{{info.Price.toFixed(2)}}</span></span>
                     <!--<span class="old">价格 <span class="oldp">¥<i>{{info.OriginalPrice.toFixed(2)}}</i></span></span>-->
                 </div>
-                <div class="freight clearfix"><span class="yunf fl">运费：¥0.00</span><span class="buynum fr">{{info.SalesVolume}}人已付款</span>
+                <div class="freight clearfix" v-if="info.ShippingFee==0"><span class="yunf fl">运费：包邮</span><span class="buynum fr">{{info.PaymentAmount}}人已付款</span>
+                </div>
+                <div class="freight clearfix" v-else=""><span class="yunf fl">运费：¥{{info.ShippingFee.toFixed(2)}}</span><span class="buynum fr">{{info.PaymentAmount}}人已付款</span>
                 </div>
             </div>
             <!--<div class="tips">-->
@@ -100,15 +102,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="tc other jiajg" v-if="info.PurchaseGood.length">
-                    <div class="tit">加价购</div>
-                    <div class="f-cb choose-box">
-                        <div class="jjbox clearfix" data-jjid="0"><span class="quan fl"></span><span class="fl bujiaj">不加价</span></div>
-                        <div class="jjbox clearfix" v-for="list in info.PurchaseGood" :data-jjid="list.Id"><span class="quan quan2 fl"></span><span
-                                class="jjimg fl" :style="{backgroundImage:'url('+list.PurImage.RelativePath+')'}"></span><span class="fl jjwz"><i>+{{list.ShopPrice}}</i>元获得{{list.Name}}</span></div>
 
-                    </div>
-                </div>
             </div>
             <div class="getnum">
                 <div class="tit fl">数量</div>

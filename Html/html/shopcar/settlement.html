@@ -105,7 +105,8 @@
             </div>
             <div class="line postage" :data-postage="info.ShippingFee">
                 <div class="tt fl">邮费</div>
-                <div class="price fr shipprice" :data-price="ShippingFee">¥<span
+                <div class="price fr shipprice" :data-price="ShippingFee" v-if="info.ShippingFee==0">包邮</div>
+                <div class="price fr shipprice" :data-price="ShippingFee" v-else>¥<span
                         class="amo">{{info.ShippingFee.toFixed(2)}}</span></div>
             </div>
             <div class="line">
