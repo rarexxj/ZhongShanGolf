@@ -1,0 +1,4 @@
+2017-04-11 09:11:14,001 [6] BntWeb.Core.SystemSettings.Services.ClearLogsTask - (null) - 清理数据库业务日志1条 [(null)]
+2017-04-11 10:22:07,790 [7] BntWeb.Core.SystemSettings.Services.ClearLogsTask - (null) - 清理数据库业务日志1条 [(null)]
+2017-04-11 15:36:58,205 [9] BntWeb.Core.SystemSettings.Services.ClearLogsTask - (null) - 清理数据库业务日志1条 [(null)]
+2017-04-11 15:58:58,351 [15] BntWeb.Activity.Services.ActivityOperateTask - (null) - 1个活动自动转为进行中 [(null)]

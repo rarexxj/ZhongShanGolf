@@ -1,5 +1,6 @@
 .collection .box {
     border-bottom: 1px solid #e8e8e8;
+    position: relative;
 }
 .collection .box .a {
     display: block;
@@ -44,8 +45,8 @@
     line-height: 0.24rem;
     color: #999999;
     position: absolute;
-    right:0;
-    bottom: 0.1rem;
+    right:0.3rem;
+    bottom: 0.3rem;
 }
 .search-box {
     position: absolute;
